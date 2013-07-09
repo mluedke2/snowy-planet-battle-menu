@@ -24,6 +24,9 @@
 		FA5B5973178C7ED500336A0E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5972178C7ED500336A0E /* SpriteKit.framework */; };
 		FA5B5976178C80F400336A0E /* HelloScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5975178C80C100336A0E /* HelloScene.m */; };
 		FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5978178C886D00336A0E /* SpaceshipScene.m */; };
+		FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597D178CBDAC00336A0E /* easy_button.png */; };
+		FA5B5980178CC6D400336A0E /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597F178CC6D400336A0E /* a.png */; };
+		FA5B5982178CCACB00336A0E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5981178CCACB00336A0E /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		FA5B5975178C80C100336A0E /* HelloScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloScene.m; sourceTree = "<group>"; };
 		FA5B5977178C886D00336A0E /* SpaceshipScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
 		FA5B5978178C886D00336A0E /* SpaceshipScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
+		FA5B597D178CBDAC00336A0E /* easy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy_button.png; sourceTree = "<group>"; };
+		FA5B597F178CC6D400336A0E /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		FA5B5981178CCACB00336A0E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5B5982178CCACB00336A0E /* CoreText.framework in Frameworks */,
 				FA5B5973178C7ED500336A0E /* SpriteKit.framework in Frameworks */,
 				FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */,
 				FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */,
@@ -110,6 +117,7 @@
 		FA5B593C178C7EC100336A0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA5B5981178CCACB00336A0E /* CoreText.framework */,
 				FA5B5972178C7ED500336A0E /* SpriteKit.framework */,
 				FA5B593D178C7EC100336A0E /* Foundation.framework */,
 				FA5B593F178C7EC100336A0E /* CoreGraphics.framework */,
@@ -170,6 +178,8 @@
 		FA5B597A178C900400336A0E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FA5B597D178CBDAC00336A0E /* easy_button.png */,
+				FA5B597F178CC6D400336A0E /* a.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -254,6 +264,8 @@
 				FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */,
 				FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */,
 				FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */,
+				FA5B5980178CC6D400336A0E /* a.png in Resources */,
+				FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
