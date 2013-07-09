@@ -23,10 +23,18 @@
     self.backgroundColor = [SKColor lightGrayColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
+    // add spaceship!
     SKSpriteNode *spaceship = [self newSpaceship];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame)-150,
                                      CGRectGetMidY(self.frame)-150);
     [self addChild:spaceship];
+    
+    //add rocks!
+    SKAction *makeRocks = [SKAction sequence: @[
+                                                [SKAction performSelector:@selector(addRock) onTarget:self],
+                                                [SKAction waitForDuration:0.10 withRange:0.15]
+                                                ]];
+    [self runAction: [SKAction repeatActionForever:makeRocks]];
 }
 
 - (SKSpriteNode *)newSpaceship
@@ -47,12 +55,19 @@
     hover.timingMode = SKActionTimingEaseInEaseOut;
     [hull runAction: [SKAction repeatActionForever:hover]];
     
+    // add light one, it goes counterclockwise
     SKSpriteNode *light1 = [self newLightForward:YES];
     light1.position = CGPointMake(25.0, 6.0);
     [hull addChild:light1];
+    
+    // add light two, it goes clockwise
     SKSpriteNode *light2 = [self newLightForward:NO];
     light2.position = CGPointMake(45.0, 6.0);
     [hull addChild:light2];
+    
+    // physics! science!
+    hull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hull.size];
+    hull.physicsBody.dynamic = NO;
     
     return hull;
 }
@@ -61,14 +76,6 @@
 {
     SKSpriteNode *light = [[SKSpriteNode alloc] initWithColor:[SKColor
                                                                yellowColor] size:CGSizeMake(5,5)];
-  
-    /*
-    SKSpriteNode *light = [[SKSpriteNode alloc] initWithImageNamed:@"stat_happy"];
-    [light setSize:CGSizeMake(30, 30)];
-    light.color = [SKColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-    light.colorBlendFactor = 1.0;
-    */
-    
     
     SKAction *blink = [SKAction sequence:@[
                                            [SKAction fadeOutWithDuration:0.25],
@@ -85,6 +92,7 @@
     SKAction *orbit = [SKAction followPath:circlePath duration:0.1];
     */
     
+    // this makes an octagon, not a circle! but the elliptical CGPath doesn't seem to work yet
     float orbit_radius = 30.0;
     float rev_time = 2.0;
     
@@ -108,5 +116,27 @@
     
     return light;
 }
+
+
+static inline CGFloat skRandf() {
+    return rand() / (CGFloat) RAND_MAX;
+}
+
+static inline CGFloat skRand(CGFloat low, CGFloat high) {
+    return skRandf() * (high - low) + low;
+}
+
+- (void) addRock
+{
+    SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor
+                                                              brownColor] size:CGSizeMake(8,8)];
+    rock.position = CGPointMake(skRand(0, self.size.width),
+                                self.size.height-50);
+    rock.name = @"rock";
+    rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
+    rock.physicsBody.usesPreciseCollisionDetection = YES;
+    [self addChild:rock];
+}
+
 
 @end

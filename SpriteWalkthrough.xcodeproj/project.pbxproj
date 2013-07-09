@@ -24,7 +24,6 @@
 		FA5B5973178C7ED500336A0E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5972178C7ED500336A0E /* SpriteKit.framework */; };
 		FA5B5976178C80F400336A0E /* HelloScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5975178C80C100336A0E /* HelloScene.m */; };
 		FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5978178C886D00336A0E /* SpaceshipScene.m */; };
-		FA5B597C178C900E00336A0E /* stat_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597B178C900E00336A0E /* stat_happy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		FA5B5975178C80C100336A0E /* HelloScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloScene.m; sourceTree = "<group>"; };
 		FA5B5977178C886D00336A0E /* SpaceshipScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
 		FA5B5978178C886D00336A0E /* SpaceshipScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
-		FA5B597B178C900E00336A0E /* stat_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stat_happy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +170,6 @@
 		FA5B597A178C900400336A0E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B597B178C900E00336A0E /* stat_happy.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 			files = (
 				FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */,
 				FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */,
-				FA5B597C178C900E00336A0E /* stat_happy.png in Resources */,
 				FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
