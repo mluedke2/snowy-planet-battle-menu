@@ -24,7 +24,8 @@
     self.backgroundColor = [SKColor colorWithRed:120.0/255.0 green:180.0/255.0 blue:230.0/255.0 alpha:1.0];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
- /*   // add spaceship!
+    /*
+    // add spaceship!
     SKSpriteNode *spaceship = [self newSpaceship];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame)-150,
                                      CGRectGetMidY(self.frame)-250);
@@ -44,7 +45,12 @@
     [self makeButtons];
     
     // and a title!
-    [self makeTitle];
+  //  [self makeTitle];
+    
+    // or maybe a dancing title!
+    SKLabelNode *dancingTitle = [self newDancingTitle];
+    dancingTitle.position = CGPointMake(CGRectGetMidX(self.frame)-45, self.frame.size.height - 150);
+    [self addChild:dancingTitle];
     
     // add snow!
     SKEmitterNode *snow = [self newSnowEmitter];
@@ -150,6 +156,63 @@
     [self addChild:label6];
      
 
+}
+
+- (SKLabelNode *)newDancingTitle
+{
+    SKLabelNode *dancingTitle = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    
+    // TODO: make more swoopy
+    [dancingTitle setText:@"Welcome!"];
+    dancingTitle.fontColor = [SKColor whiteColor];
+    dancingTitle.fontSize = 52.0;
+    
+    SKAction *hover = [SKAction sequence:@[
+                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           
+                                           [SKAction moveByX:0.0 y:-15.0 duration:0.1],
+                                           [SKAction moveByX:10.0 y:-10.0 duration:0.1],
+                                           [SKAction moveByX:20.0 y:-5.0 duration:0.1],
+                                           [SKAction moveByX:30 y:0.0 duration:0.1],
+                                           [SKAction moveByX:20.0 y:5.0 duration:0.1],
+                                           [SKAction moveByX:10.0 y:10.0 duration:0.1],
+                                           [SKAction moveByX:0.0 y:15.0 duration:0.1],
+                                           
+                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           
+                                           [SKAction moveByX:0.0 y:-15.0 duration:0.1],
+                                           [SKAction moveByX:-10.0 y:-10.0 duration:0.1],
+                                           [SKAction moveByX:-20.0 y:-5.0 duration:0.1],
+                                           [SKAction moveByX:-30 y:0.0 duration:0.1],
+                                           [SKAction moveByX:-20.0 y:5.0 duration:0.1],
+                                           [SKAction moveByX:-10.0 y:10.0 duration:0.1],
+                                           [SKAction moveByX:0.0 y:15.0 duration:0.1]
+                                           
+                                           ]];
+    hover.timingMode = SKActionTimingEaseInEaseOut;
+    [dancingTitle runAction: [SKAction repeatActionForever:hover]];
+    
+    // add light one, it goes counterclockwise
+    SKSpriteNode *light1 = [self newLightForward:YES];
+    light1.position = CGPointMake(25.0, 6.0);
+    [dancingTitle addChild:light1];
+    
+    // add light two, it goes clockwise
+    SKSpriteNode *light2 = [self newLightForward:NO];
+    light2.position = CGPointMake(45.0, 6.0);
+    [dancingTitle addChild:light2];
+    
+    // physics! science!
+    dancingTitle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:dancingTitle.frame.size];
+    dancingTitle.physicsBody.dynamic = NO;
+    
+    return dancingTitle;
 }
 
 - (SKSpriteNode *)newSpaceship
