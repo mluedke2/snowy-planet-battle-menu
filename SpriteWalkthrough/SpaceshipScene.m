@@ -164,7 +164,7 @@
     
     // TODO: make more swoopy
     [dancingTitle setText:@"Welcome!"];
-    dancingTitle.fontColor = [SKColor whiteColor];
+    dancingTitle.fontColor = [SKColor yellowColor];
     dancingTitle.fontSize = 72.0;
     
     SKAction *hover = [SKAction sequence:@[
@@ -313,11 +313,17 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     rock.name = @"rock";
     rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
     rock.physicsBody.usesPreciseCollisionDetection = NO;
- //   rock.physicsBody.friction = 1.0;
- //   rock.physicsBody.linearDamping = 0.9;
-    
-   // rock.physicsBody.restitution = 1.0;
     [self addChild:rock];
+    
+    // this is important for frame rate!
+    [self performSelector:@selector(removeSnowFlake:) withObject:rock afterDelay:45.0];
+    
+}
+
+- (void)removeSnowFlake:(SKNode *)snowFlake {
+    
+    [snowFlake removeFromParent];
+    
 }
 
 -(void)didSimulatePhysics
@@ -336,20 +342,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     NSString *snowPath = [[NSBundle mainBundle] pathForResource:@"MyParticle"
                                                            ofType:@"sks"];
     SKEmitterNode *snow = [NSKeyedUnarchiver unarchiveObjectWithFile:snowPath];
-    
-    CGFloat duration = 2.0;
-    
-/*    SKAction *snowFall = [SKAction sequence:@[
-                                            [SKAction waitForDuration:duration],
-                                            [SKAction runBlock:^{
-        snow.particleBirthRate = 0;
-    }],
-                                            [SKAction waitForDuration:snow.particleLifetime + snow.particleLifetimeRange],
-                                    //        [SKAction removeFromParent],
-                                            ]];
-    
-    [snow runAction:[SKAction repeatActionForever:snowFall]];
- */
     return snow;
 }
 
