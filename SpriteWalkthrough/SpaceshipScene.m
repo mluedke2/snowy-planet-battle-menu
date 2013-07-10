@@ -36,7 +36,7 @@
     //add rocks!
     SKAction *makeRocks = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addRock) onTarget:self],
-                                                [SKAction waitForDuration:0.010 withRange:0.15]
+                                                [SKAction waitForDuration:0.10 withRange:0.15]
                                                 ]];
     [self runAction: [SKAction repeatActionForever:makeRocks]];
     
@@ -165,7 +165,7 @@
     // TODO: make more swoopy
     [dancingTitle setText:@"Welcome!"];
     dancingTitle.fontColor = [SKColor whiteColor];
-    dancingTitle.fontSize = 52.0;
+    dancingTitle.fontSize = 72.0;
     
     SKAction *hover = [SKAction sequence:@[
                                            [SKAction moveByX:0.0 y:5.0 duration:0.3],
