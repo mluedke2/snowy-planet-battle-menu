@@ -7,13 +7,8 @@
 //
 
 #import "SpaceshipScene.h"
-#import <CoreText/CoreText.h>
 
 @implementation SpaceshipScene
-
-@synthesize animationLayer = _animationLayer;
-@synthesize pathLayer = _pathLayer;
-@synthesize penLayer = _penLayer;
 
 - (void)didMoveToView:(SKView *)view
 {
@@ -32,13 +27,13 @@
     // add spaceship!
     SKSpriteNode *spaceship = [self newSpaceship];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame)-150,
-                                     CGRectGetMidY(self.frame)-150);
+                                     CGRectGetMidY(self.frame)-250);
     [self addChild:spaceship];
     
     //add rocks!
     SKAction *makeRocks = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addRock) onTarget:self],
-                                                [SKAction waitForDuration:0.10 withRange:0.15]
+                                                [SKAction waitForDuration:0.0010 withRange:0.15]
                                                 ]];
     [self runAction: [SKAction repeatActionForever:makeRocks]];
     
@@ -48,133 +43,34 @@
 }
 
 -(void)makeButtons {
-    
-    /*
-    SKSpriteNode *button1 = [SKSpriteNode spriteNodeWithImageNamed:@"easy_button.png"];
-    button1.position = CGPointMake(220, self.frame.size.height - 320);
-    button1.size = CGSizeMake(200, 90);
-    button1.name = @"button1";
-    button1.alpha = 1.0;
-    [self addChild:button1];
-    
-    SKSpriteNode *letter = [SKSpriteNode spriteNodeWithImageNamed:@"a.png"];
-    letter.position = button1.position;
-    letter.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.size];
-    letter.physicsBody.dynamic = NO;
-    [self addChild:letter];
-     */
-    
-    // trying something crazy to get path of letters
-    
-    self.animationLayer = [CALayer layer];
-    self.animationLayer.frame = CGRectMake(20.0f, 64.0f,
-                                           CGRectGetWidth(self.view.layer.bounds) - 40.0f,
-                                           CGRectGetHeight(self.view.layer.bounds) - 84.0f);
-    [self.view.layer addSublayer:self.animationLayer];
-    
-    if (self.pathLayer != nil) {
-        [self.penLayer removeFromSuperlayer];
-        [self.pathLayer removeFromSuperlayer];
-        self.pathLayer = nil;
-        self.penLayer = nil;
-    }
-    
-    // Create path from text
-    // See: http://www.codeproject.com/KB/iPhone/Glyph.aspx
-    // License: The Code Project Open License (CPOL) 1.02 http://www.codeproject.com/info/cpol10.aspx
-    CGMutablePathRef letters = CGPathCreateMutable();
-    
-    CTFontRef font = CTFontCreateWithName(CFSTR("Helvetica-Bold"), 36.0f, NULL);
-    NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
-                           (id)CFBridgingRelease(font), kCTFontAttributeName,
-                           nil];
-    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"Hello World!"
-                                                                     attributes:attrs];
-    CTLineRef line = CTLineCreateWithAttributedString((CFAttributedStringRef)attrString);
-	CFArrayRef runArray = CTLineGetGlyphRuns(line);
-    
-    // for each RUN
-    for (CFIndex runIndex = 0; runIndex < CFArrayGetCount(runArray); runIndex++)
-    {
-        // Get FONT for this run
-        CTRunRef run = (CTRunRef)CFArrayGetValueAtIndex(runArray, runIndex);
-        CTFontRef runFont = CFDictionaryGetValue(CTRunGetAttributes(run), kCTFontAttributeName);
-        
-        // for each GLYPH in run
-        for (CFIndex runGlyphIndex = 0; runGlyphIndex < CTRunGetGlyphCount(run); runGlyphIndex++)
-        {
-            // get Glyph & Glyph-data
-            CFRange thisGlyphRange = CFRangeMake(runGlyphIndex, 1);
-            CGGlyph glyph;
-            CGPoint position;
-            CTRunGetGlyphs(run, thisGlyphRange, &glyph);
-            CTRunGetPositions(run, thisGlyphRange, &position);
-            
-            // Get PATH of outline
-            {
-                CGPathRef letter = CTFontCreatePathForGlyph(runFont, glyph, NULL);
-                CGAffineTransform t = CGAffineTransformMakeTranslation(position.x, position.y);
-                CGPathAddPath(letters, &t, letter);
-                CGPathRelease(letter);
-            }
-        }
-    }
-   // CFRelease(line);
-    
-    // draw the letters I guess?
-    
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointZero];
-    [path appendPath:[UIBezierPath bezierPathWithCGPath:letters]];
-    [path stroke];
-    
-    CGPathRelease(letters);
-    CFRelease(font);
-    
-    CAShapeLayer *pathLayer = [CAShapeLayer layer];
-    // changed next line
-    pathLayer.frame = self.frame;
-	pathLayer.bounds = CGPathGetBoundingBox(path.CGPath);
-    pathLayer.geometryFlipped = YES;
-    pathLayer.path = path.CGPath;
-    pathLayer.strokeColor = [[UIColor blackColor] CGColor];
-    pathLayer.fillColor = nil;
-    pathLayer.lineWidth = 3.0f;
-    pathLayer.lineJoin = kCALineJoinBevel;
 
-    [self.animationLayer addSublayer:pathLayer];
+    for (int i = 0; i < 6; i++) {
+        
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(250*(i%2+1), self.frame.size.height - (220*(i/2+1)), 200, 90)];
+        [button setImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
+        [self.view addSubview:button];
     
-    self.pathLayer = pathLayer;
+        /*
+    SKSpriteNode *button = [SKSpriteNode spriteNodeWithImageNamed:@"easy_button.png"];
+    button.position = CGPointMake(250*(i%2+1), self.frame.size.height - (220*(i/2+1)));
+    button.size = CGSizeMake(200, 90);
+    button.name = [NSString stringWithFormat:@"button%i", i];
+    button.alpha = 1.0;
+    [self addChild:button];
+         */
     
-    UIImage *penImage = [UIImage imageNamed:@"a.png"];
-    CALayer *penLayer = [CALayer layer];
-    penLayer.contents = (id)penImage.CGImage;
-    penLayer.anchorPoint = CGPointZero;
-    penLayer.frame = CGRectMake(0.0f, 0.0f, penImage.size.width, penImage.size.height);
-    [pathLayer addSublayer:penLayer];
-    
-    self.penLayer = penLayer;
-    
-    
-    [self.pathLayer removeAllAnimations];
-    [self.penLayer removeAllAnimations];
-    
-    self.penLayer.hidden = NO;
-    
-    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 10.0;
-    pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
-    pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
-    [self.pathLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
-    
-    CAKeyframeAnimation *penAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    penAnimation.duration = 10.0;
-    penAnimation.path = self.pathLayer.path;
-    penAnimation.calculationMode = kCAAnimationPaced;
-    penAnimation.delegate = self;
-    [self.penLayer addAnimation:penAnimation forKey:@"position"];
-    
-    
+    SKLabelNode *letters = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
+    letters.position = button.frame.origin;
+    [letters setText:[NSString stringWithFormat:@"Option %i!", (i+1)]];
+    [letters setFontSize:32.0];
+    [letters setFontColor:[SKColor whiteColor]];
+    [letters setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+    letters.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button.frame.size];
+    letters.physicsBody.dynamic = NO;
+    [self addChild:letters];
+        
+    }
+
 }
 
 - (SKSpriteNode *)newSpaceship
@@ -232,7 +128,7 @@
     SKAction *orbit = [SKAction followPath:circlePath duration:0.1];
     */
     
-    // this makes an octagon, not a circle! but the elliptical CGPath doesn't seem to work yet
+    // this makes an octagon, not a circle! but the elliptical CGPath doesn't seem to work yet, and would be slower anyway
     float orbit_radius = 30.0;
     float rev_time = 2.0;
     

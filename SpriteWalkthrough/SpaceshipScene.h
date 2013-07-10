@@ -7,18 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import <QuartzCore/QuartzCore.h>
 
-@interface SpaceshipScene : SKScene {
-    CALayer *_animationLayer;
-    CAShapeLayer *_pathLayer;
-    CALayer *_penLayer;
-}
+@interface SpaceshipScene : SKScene
 
 @property BOOL contentCreated;
-
-@property (nonatomic, retain) CALayer *animationLayer;
-@property (nonatomic, retain) CAShapeLayer *pathLayer;
-@property (nonatomic, retain) CALayer *penLayer;
 
 @end
