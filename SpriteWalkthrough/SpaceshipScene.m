@@ -7,6 +7,7 @@
 //
 
 #import "SpaceshipScene.h"
+#import "SpriteMainScene.h"
 
 @implementation SpaceshipScene
 
@@ -79,6 +80,7 @@
     CGPoint buttonCenter = CGPointMake(CGRectGetMidX(sender.frame), self.frame.size.height - CGRectGetMidY(sender.frame));
     
     SKAction *shootLightAndDisappear = [SKAction sequence:@[
+                                                            [SKAction fadeAlphaTo:1.0 duration:0.2],
                                                             [SKAction scaleBy:4.0 duration:1.0],
                                                             [SKAction moveTo:[self convertPoint:buttonCenter toNode:dancingTitle] duration:0.5],
                                                             [SKAction removeFromParent]
@@ -94,10 +96,54 @@
     [dancingTitle removeAllActions];
     
     [light1 runAction:shootLightAndDisappear];
-    [light2 runAction:shootLightAndDisappear];
+    [light2 runAction:shootLightAndDisappear completion:^{
     
-    // TODO: insert 'splosions!
+        // insert 'splosion!
+        [sender removeFromSuperview];
+        SKEmitterNode *splosion = [self newSplosion];
+        splosion.particlePosition = buttonCenter;
+        [self addChild:splosion];
+        
+        float duration = 2.0;
+        
+        [splosion runAction:[SKAction sequence:@[
+                                                 [SKAction waitForDuration:duration],
+                                                 [SKAction runBlock:^{
+            splosion.particleBirthRate = 0;
+        }],
+                                                 [SKAction waitForDuration:splosion.particleLifetime + splosion.particleLifetimeRange],
+                                                 [SKAction removeFromParent],
+                                                 ]]
+         
+                 completion:^{
+                 
+                     // and... scene!
+                     [[self.view subviews]
+                      makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                     
+                     SKScene* mainScene = [[SpriteMainScene alloc]
+                                           initWithSize:self.size];
+                     SKTransition *doors = [SKTransition
+                                            doorsCloseHorizontalWithDuration:0.5];
+                     [self.view presentScene:mainScene transition:doors];
+                 
+                 }];
     
+    }];
+    
+    /*
+    // make a sprite replace the button, and have it spin away!
+    SKSpriteNode *buttonClone = [SKSpriteNode spriteNodeWithImageNamed:@"easy_button"];
+    buttonClone.position = CGPointMake(buttonCenter.x-100, buttonCenter.y-45);
+    buttonClone.size = sender.frame.size;
+    buttonClone.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:buttonClone.size];
+    buttonClone.physicsBody.dynamic = YES;
+    buttonClone.physicsBody.affectedByGravity = YES;
+    [self addChild:buttonClone];
+    
+    */
+    
+   
     
 }
 
@@ -385,10 +431,18 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 - (SKEmitterNode*) newSnowEmitter
 {
-    NSString *snowPath = [[NSBundle mainBundle] pathForResource:@"MyParticle"
+    NSString *snowPath = [[NSBundle mainBundle] pathForResource:@"Snow"
                                                            ofType:@"sks"];
     SKEmitterNode *snow = [NSKeyedUnarchiver unarchiveObjectWithFile:snowPath];
     return snow;
+}
+
+- (SKEmitterNode*) newSplosion
+{
+    NSString *splosionPath = [[NSBundle mainBundle] pathForResource:@"Splosions"
+                                                         ofType:@"sks"];
+    SKEmitterNode *splosion = [NSKeyedUnarchiver unarchiveObjectWithFile:splosionPath];
+    return splosion;
 }
 
 

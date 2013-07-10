@@ -31,7 +31,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     SpaceshipScene *scene = [[SpaceshipScene alloc]
-                         initWithSize:CGSizeMake(768,1024)];
+                         initWithSize:self.view.frame.size];
     SKView *spriteView = (SKView*) self.view;
     [spriteView presentScene: scene];
 }

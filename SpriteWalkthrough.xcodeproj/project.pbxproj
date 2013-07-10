@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA380A2B178DCC6E005A5DAE /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A29178DCC6E005A5DAE /* MyParticle.sks */; };
+		FA380A2B178DCC6E005A5DAE /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A29178DCC6E005A5DAE /* Snow.sks */; };
 		FA380A2C178DCC6E005A5DAE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FA380A2A178DCC6E005A5DAE /* spark.png */; };
+		FA380A31178E02EA005A5DAE /* Splosions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A30178E02EA005A5DAE /* Splosions.sks */; };
+		FA380A34178E0605005A5DAE /* SpriteMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA380A33178E0605005A5DAE /* SpriteMainScene.m */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
@@ -38,8 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA380A29178DCC6E005A5DAE /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		FA380A29178DCC6E005A5DAE /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		FA380A2A178DCC6E005A5DAE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FA380A30178E02EA005A5DAE /* Splosions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Splosions.sks; sourceTree = "<group>"; };
+		FA380A32178E0605005A5DAE /* SpriteMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteMainScene.h; sourceTree = "<group>"; };
+		FA380A33178E0605005A5DAE /* SpriteMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteMainScene.m; sourceTree = "<group>"; };
 		FA5B593A178C7EC100336A0E /* SpriteWalkthrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteWalkthrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,8 +96,9 @@
 		FA380A24178DCAFE005A5DAE /* Particles */ = {
 			isa = PBXGroup;
 			children = (
-				FA380A29178DCC6E005A5DAE /* MyParticle.sks */,
+				FA380A29178DCC6E005A5DAE /* Snow.sks */,
 				FA380A2A178DCC6E005A5DAE /* spark.png */,
+				FA380A30178E02EA005A5DAE /* Splosions.sks */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 				FA5B5955178C7EC100336A0E /* Images.xcassets */,
 				FA5B5977178C886D00336A0E /* SpaceshipScene.h */,
 				FA5B5978178C886D00336A0E /* SpaceshipScene.m */,
+				FA380A32178E0605005A5DAE /* SpriteMainScene.h */,
+				FA380A33178E0605005A5DAE /* SpriteMainScene.m */,
 			);
 			path = SpriteWalkthrough;
 			sourceTree = "<group>";
@@ -243,11 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */,
-				FA380A2B178DCC6E005A5DAE /* MyParticle.sks in Resources */,
+				FA380A2B178DCC6E005A5DAE /* Snow.sks in Resources */,
 				FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */,
 				FA380A2C178DCC6E005A5DAE /* spark.png in Resources */,
 				FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */,
 				FA5B5980178CC6D400336A0E /* a.png in Resources */,
+				FA380A31178E02EA005A5DAE /* Splosions.sks in Resources */,
 				FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +278,7 @@
 				FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */,
 				FA5B594A178C7EC100336A0E /* main.m in Sources */,
 				FA5B594E178C7EC100336A0E /* SpriteAppDelegate.m in Sources */,
+				FA380A34178E0605005A5DAE /* SpriteMainScene.m in Sources */,
 				FA5B5954178C7EC100336A0E /* SpriteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
