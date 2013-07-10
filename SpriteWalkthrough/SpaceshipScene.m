@@ -35,7 +35,7 @@
     //add rocks!
     SKAction *makeRocks = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addRock) onTarget:self],
-                                                [SKAction waitForDuration:0.0010 withRange:0.15]
+                                                [SKAction waitForDuration:0.010 withRange:0.15]
                                                 ]];
     [self runAction: [SKAction repeatActionForever:makeRocks]];
     
@@ -77,35 +77,35 @@
     [button1.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
     [self.view addSubview:button1];
     
-    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 250, 300, 200, 90)];
+    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 200, 90)];
     [button2 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
     [button2 setTitle:@"Option 2" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button2.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
     [self.view addSubview:button2];
     
-    UIButton *button3 = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 200, 90)];
+    UIButton *button3 = [[UIButton alloc] initWithFrame:CGRectMake(150, 700, 200, 90)];
     [button3 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
     [button3 setTitle:@"Option 3" forState:UIControlStateNormal];
     [button3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button3.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
     [self.view addSubview:button3];
     
-    UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-300, 500, 200, 90)];
+    UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-350, 700, 200, 90)];
     [button4 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
     [button4 setTitle:@"Option 4" forState:UIControlStateNormal];
     [button4 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button4.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
     [self.view addSubview:button4];
     
-    UIButton *button5 = [[UIButton alloc] initWithFrame:CGRectMake(150, 700, 200, 90)];
+    UIButton *button5 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-300, 500, 200, 90)];
     [button5 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
     [button5 setTitle:@"Option 5" forState:UIControlStateNormal];
     [button5 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button5.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
     [self.view addSubview:button5];
     
-    UIButton *button6 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-350, 700, 200, 90)];
+    UIButton *button6 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 250, 300, 200, 90)];
     [button6 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
     [button6 setTitle:@"Option 6" forState:UIControlStateNormal];
     [button6 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -120,31 +120,31 @@
     [self addChild:label1];
     
     SKNode *label2 = [SKNode new];
-    label2.position = CGPointMake(self.frame.size.width - 150, self.frame.size.height - 345);
+    label2.position = CGPointMake(200, self.frame.size.height - 545);
     label2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label2.physicsBody.dynamic = NO;
     [self addChild:label2];
     
     SKNode *label3 = [SKNode new];
-    label3.position = CGPointMake(200, self.frame.size.height - 545);
+    label3.position = CGPointMake(250, self.frame.size.height - 745);
     label3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label3.physicsBody.dynamic = NO;
     [self addChild:label3];
     
     SKNode *label4 = [SKNode new];
-    label4.position = CGPointMake(self.frame.size.width - 200, self.frame.size.height - 545);
+    label4.position = CGPointMake(self.frame.size.width - 250, self.frame.size.height - 745);
     label4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label4.physicsBody.dynamic = NO;
     [self addChild:label4];
     
     SKNode *label5 = [SKNode new];
-    label5.position = CGPointMake(250, self.frame.size.height - 745);
+    label5.position = CGPointMake(self.frame.size.width - 200, self.frame.size.height - 545);
     label5.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label5.physicsBody.dynamic = NO;
     [self addChild:label5];
     
     SKNode *label6 = [SKNode new];
-    label6.position = CGPointMake(self.frame.size.width - 250, self.frame.size.height - 745);
+    label6.position = CGPointMake(self.frame.size.width - 150, self.frame.size.height - 345);
     label6.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label6.physicsBody.dynamic = NO;
     [self addChild:label6];
