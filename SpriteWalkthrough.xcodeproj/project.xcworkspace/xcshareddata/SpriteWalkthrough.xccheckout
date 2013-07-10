@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D21AB567-8EBB-487C-B930-EE8528B28ED1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpriteWalkthrough</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91561274-E916-4E6B-BDEE-9B2BAA7CA7CB</key>
+		<string>https://github.com/mluedke2/sk-sample.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpriteWalkthrough.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91561274-E916-4E6B-BDEE-9B2BAA7CA7CB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mluedke2/sk-sample.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91561274-E916-4E6B-BDEE-9B2BAA7CA7CB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91561274-E916-4E6B-BDEE-9B2BAA7CA7CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpriteWalkthrough</string>
+		</dict>
+	</array>
+</dict>
+</plist>

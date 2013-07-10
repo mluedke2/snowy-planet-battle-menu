@@ -24,21 +24,31 @@
     self.backgroundColor = [SKColor colorWithRed:120.0/255.0 green:180.0/255.0 blue:230.0/255.0 alpha:1.0];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
-    // add spaceship!
+ /*   // add spaceship!
     SKSpriteNode *spaceship = [self newSpaceship];
     spaceship.position = CGPointMake(CGRectGetMidX(self.frame)-150,
                                      CGRectGetMidY(self.frame)-250);
     [self addChild:spaceship];
+  */
+    
     
     //add rocks!
     SKAction *makeRocks = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addRock) onTarget:self],
-                                                [SKAction waitForDuration:0.0010 withRange:0.15]
+                                                [SKAction waitForDuration:0.10 withRange:0.15]
                                                 ]];
     [self runAction: [SKAction repeatActionForever:makeRocks]];
     
+    
     // and buttons!
     [self makeButtons];
+    
+    // add snow!
+    SKEmitterNode *snow = [self newSnowEmitter];
+    snow.particlePosition = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height);
+    snow.particlePositionRange = CGPointMake(self.frame.size.width, 0.0);
+//    snow.emissionAngleRange = 100.0;
+    [self addChild:snow];
 
 }
 
@@ -46,7 +56,7 @@
 
     for (int i = 0; i < 6; i++) {
         
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(250*(i%2+1), self.frame.size.height - (220*(i/2+1)), 200, 90)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(250*(i%2+1)-100, (220*(i/2+1))-45, 200, 90)];
         [button setImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
         [self.view addSubview:button];
     
@@ -60,7 +70,7 @@
          */
     
     SKLabelNode *letters = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-    letters.position = button.frame.origin;
+    letters.position = CGPointMake(250*(i%2+1), self.frame.size.height - (220*(i/2+1)));
     [letters setText:[NSString stringWithFormat:@"Option %i!", (i+1)]];
     [letters setFontSize:32.0];
     [letters setFontColor:[SKColor whiteColor]];
@@ -182,6 +192,30 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
         if (node.position.y < 0)
             [node removeFromParent];
     }];
+}
+
+// trying to make background snow
+
+- (SKEmitterNode*) newSnowEmitter
+{
+    NSString *snowPath = [[NSBundle mainBundle] pathForResource:@"MyParticle"
+                                                           ofType:@"sks"];
+    SKEmitterNode *snow = [NSKeyedUnarchiver unarchiveObjectWithFile:snowPath];
+    
+    CGFloat duration = 2.0;
+    
+/*    SKAction *snowFall = [SKAction sequence:@[
+                                            [SKAction waitForDuration:duration],
+                                            [SKAction runBlock:^{
+        snow.particleBirthRate = 0;
+    }],
+                                            [SKAction waitForDuration:snow.particleLifetime + snow.particleLifetimeRange],
+                                    //        [SKAction removeFromParent],
+                                            ]];
+    
+    [snow runAction:[SKAction repeatActionForever:snowFall]];
+ */
+    return snow;
 }
 
 

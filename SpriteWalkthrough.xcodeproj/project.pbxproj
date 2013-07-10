@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA380A2B178DCC6E005A5DAE /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A29178DCC6E005A5DAE /* MyParticle.sks */; };
+		FA380A2C178DCC6E005A5DAE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FA380A2A178DCC6E005A5DAE /* spark.png */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA380A29178DCC6E005A5DAE /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		FA380A2A178DCC6E005A5DAE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		FA5B593A178C7EC100336A0E /* SpriteWalkthrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteWalkthrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA380A24178DCAFE005A5DAE /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				FA380A29178DCC6E005A5DAE /* MyParticle.sks */,
+				FA380A2A178DCC6E005A5DAE /* spark.png */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
 		FA5B5931178C7EC100336A0E = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		FA5B5943178C7EC100336A0E /* SpriteWalkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				FA380A24178DCAFE005A5DAE /* Particles */,
 				FA5B597A178C900400336A0E /* Images */,
 				FA5B5944178C7EC100336A0E /* Supporting Files */,
 				FA5B594C178C7EC100336A0E /* SpriteAppDelegate.h */,
@@ -258,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */,
+				FA380A2B178DCC6E005A5DAE /* MyParticle.sks in Resources */,
 				FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */,
+				FA380A2C178DCC6E005A5DAE /* spark.png in Resources */,
 				FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */,
 				FA5B5980178CC6D400336A0E /* a.png in Resources */,
 				FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */,
@@ -489,6 +505,7 @@
 				FA5B596E178C7EC100336A0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA5B596F178C7EC100336A0E /* Build configuration list for PBXNativeTarget "SpriteWalkthroughTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +514,7 @@
 				FA5B5971178C7EC100336A0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
