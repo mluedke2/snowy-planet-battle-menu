@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E70ABECE-5FDC-4015-97AE-EB36BBF20E02</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SnowyPlanetBattleMenu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3409B060-707E-49F9-B7A3-A5F4534B959A</key>
+		<string>https://github.com/mluedke2/snowy-planet-battle-menu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SnowyPlanetBattleMenu.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3409B060-707E-49F9-B7A3-A5F4534B959A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mluedke2/snowy-planet-battle-menu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3409B060-707E-49F9-B7A3-A5F4534B959A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3409B060-707E-49F9-B7A3-A5F4534B959A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SnowyPlanetBattleMenu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

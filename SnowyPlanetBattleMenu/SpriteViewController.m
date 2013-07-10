@@ -8,7 +8,7 @@
 
 #import "SpriteViewController.h"
 #import <SpriteKit/SpriteKit.h>
-#import "SpaceshipScene.h"
+#import "MenuScene.h"
 
 @interface SpriteViewController ()
 
@@ -30,7 +30,7 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    SpaceshipScene *scene = [[SpaceshipScene alloc]
+    MenuScene *scene = [[MenuScene alloc]
                          initWithSize:self.view.frame.size];
     SKView *spriteView = (SKView*) self.view;
     [spriteView presentScene: scene];

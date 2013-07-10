@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Matt Luedke. All rights reserved.
 //
 
-#import "SpaceshipScene.h"
+#import "MenuScene.h"
 #import "SpriteMainScene.h"
 
-@implementation SpaceshipScene
+@implementation MenuScene
 
 - (void)didMoveToView:(SKView *)view
 {

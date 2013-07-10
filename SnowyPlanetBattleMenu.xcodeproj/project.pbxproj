@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA380A2B178DCC6E005A5DAE /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A29178DCC6E005A5DAE /* Snow.sks */; };
-		FA380A2C178DCC6E005A5DAE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FA380A2A178DCC6E005A5DAE /* spark.png */; };
-		FA380A31178E02EA005A5DAE /* Splosions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA380A30178E02EA005A5DAE /* Splosions.sks */; };
-		FA380A34178E0605005A5DAE /* SpriteMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA380A33178E0605005A5DAE /* SpriteMainScene.m */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
-		FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5B5946178C7EC100336A0E /* InfoPlist.strings */; };
-		FA5B594A178C7EC100336A0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5949178C7EC100336A0E /* main.m */; };
-		FA5B594E178C7EC100336A0E /* SpriteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B594D178C7EC100336A0E /* SpriteAppDelegate.m */; };
-		FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5B594F178C7EC100336A0E /* Main.storyboard */; };
-		FA5B5954178C7EC100336A0E /* SpriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5953178C7EC100336A0E /* SpriteViewController.m */; };
-		FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5B5955178C7EC100336A0E /* Images.xcassets */; };
 		FA5B595D178C7EC100336A0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B595C178C7EC100336A0E /* XCTest.framework */; };
 		FA5B595E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B595F178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
 		FA5B5973178C7ED500336A0E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5972178C7ED500336A0E /* SpriteKit.framework */; };
-		FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5978178C886D00336A0E /* SpaceshipScene.m */; };
-		FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597D178CBDAC00336A0E /* easy_button.png */; };
-		FA5B5980178CC6D400336A0E /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597F178CC6D400336A0E /* a.png */; };
+		FAED64D9178E0AB700B01F54 /* easy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FAED64D8178E0AB700B01F54 /* easy_button.png */; };
+		FAED64DD178E0AD600B01F54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64DA178E0AD600B01F54 /* main.m */; };
+		FAED64DE178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAED64DB178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist */; };
+		FAED64E1178E0ADE00B01F54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAED64DF178E0ADE00B01F54 /* InfoPlist.strings */; };
+		FAED64E5178E0AF300B01F54 /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAED64E2178E0AF300B01F54 /* Snow.sks */; };
+		FAED64E6178E0AF300B01F54 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FAED64E3178E0AF300B01F54 /* spark.png */; };
+		FAED64E7178E0AF300B01F54 /* Splosions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAED64E4178E0AF300B01F54 /* Splosions.sks */; };
+		FAED64F0178E0B3500B01F54 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64E9178E0B3500B01F54 /* MenuScene.m */; };
+		FAED64F1178E0B3500B01F54 /* SpriteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */; };
+		FAED64F2178E0B3500B01F54 /* SpriteMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */; };
+		FAED64F3178E0B3500B01F54 /* SpriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64EF178E0B3500B01F54 /* SpriteViewController.m */; };
+		FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAED64F4178E0B4000B01F54 /* Images.xcassets */; };
+		FAED64F8178E0D1D00B01F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAED64F6178E0D1D00B01F54 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,32 +40,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA380A29178DCC6E005A5DAE /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
-		FA380A2A178DCC6E005A5DAE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		FA380A30178E02EA005A5DAE /* Splosions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Splosions.sks; sourceTree = "<group>"; };
-		FA380A32178E0605005A5DAE /* SpriteMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteMainScene.h; sourceTree = "<group>"; };
-		FA380A33178E0605005A5DAE /* SpriteMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteMainScene.m; sourceTree = "<group>"; };
-		FA5B593A178C7EC100336A0E /* SpriteWalkthrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteWalkthrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowyPlanetBattleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FA5B5941178C7EC100336A0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FA5B5945178C7EC100336A0E /* SpriteWalkthrough-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteWalkthrough-Info.plist"; sourceTree = "<group>"; };
-		FA5B5947178C7EC100336A0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FA5B5949178C7EC100336A0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA5B594B178C7EC100336A0E /* SpriteWalkthrough-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpriteWalkthrough-Prefix.pch"; sourceTree = "<group>"; };
-		FA5B594C178C7EC100336A0E /* SpriteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteAppDelegate.h; sourceTree = "<group>"; };
-		FA5B594D178C7EC100336A0E /* SpriteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteAppDelegate.m; sourceTree = "<group>"; };
-		FA5B5950178C7EC100336A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA5B5952178C7EC100336A0E /* SpriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteViewController.h; sourceTree = "<group>"; };
-		FA5B5953178C7EC100336A0E /* SpriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteViewController.m; sourceTree = "<group>"; };
-		FA5B5955178C7EC100336A0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA5B595B178C7EC100336A0E /* SpriteWalkthroughTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpriteWalkthroughTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B595C178C7EC100336A0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA5B5972178C7ED500336A0E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		FA5B5977178C886D00336A0E /* SpaceshipScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
-		FA5B5978178C886D00336A0E /* SpaceshipScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
-		FA5B597D178CBDAC00336A0E /* easy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy_button.png; sourceTree = "<group>"; };
-		FA5B597F178CC6D400336A0E /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		FAED64D8178E0AB700B01F54 /* easy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easy_button.png; path = SnowyPlanetBattleMenu/easy_button.png; sourceTree = SOURCE_ROOT; };
+		FAED64DA178E0AD600B01F54 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SnowyPlanetBattleMenu/main.m; sourceTree = SOURCE_ROOT; };
+		FAED64DB178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SnowyPlanetBattleMenu-Info.plist"; path = "SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FAED64DC178E0AD600B01F54 /* SnowyPlanetBattleMenu-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SnowyPlanetBattleMenu-Prefix.pch"; path = "SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		FAED64E0178E0ADE00B01F54 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = SnowyPlanetBattleMenu/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		FAED64E2178E0AF300B01F54 /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Snow.sks; path = SnowyPlanetBattleMenu/Snow.sks; sourceTree = SOURCE_ROOT; };
+		FAED64E3178E0AF300B01F54 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = SnowyPlanetBattleMenu/spark.png; sourceTree = SOURCE_ROOT; };
+		FAED64E4178E0AF300B01F54 /* Splosions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Splosions.sks; path = SnowyPlanetBattleMenu/Splosions.sks; sourceTree = SOURCE_ROOT; };
+		FAED64E8178E0B3500B01F54 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuScene.h; path = SnowyPlanetBattleMenu/MenuScene.h; sourceTree = SOURCE_ROOT; };
+		FAED64E9178E0B3500B01F54 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuScene.m; path = SnowyPlanetBattleMenu/MenuScene.m; sourceTree = SOURCE_ROOT; };
+		FAED64EA178E0B3500B01F54 /* SpriteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteAppDelegate.h; path = SnowyPlanetBattleMenu/SpriteAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteAppDelegate.m; path = SnowyPlanetBattleMenu/SpriteAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		FAED64EC178E0B3500B01F54 /* SpriteMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteMainScene.h; path = SnowyPlanetBattleMenu/SpriteMainScene.h; sourceTree = SOURCE_ROOT; };
+		FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteMainScene.m; path = SnowyPlanetBattleMenu/SpriteMainScene.m; sourceTree = SOURCE_ROOT; };
+		FAED64EE178E0B3500B01F54 /* SpriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteViewController.h; path = SnowyPlanetBattleMenu/SpriteViewController.h; sourceTree = SOURCE_ROOT; };
+		FAED64EF178E0B3500B01F54 /* SpriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteViewController.m; path = SnowyPlanetBattleMenu/SpriteViewController.m; sourceTree = SOURCE_ROOT; };
+		FAED64F4178E0B4000B01F54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SnowyPlanetBattleMenu/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		FAED64F7178E0D1D00B01F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SnowyPlanetBattleMenu/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +95,9 @@
 		FA380A24178DCAFE005A5DAE /* Particles */ = {
 			isa = PBXGroup;
 			children = (
-				FA380A29178DCC6E005A5DAE /* Snow.sks */,
-				FA380A2A178DCC6E005A5DAE /* spark.png */,
-				FA380A30178E02EA005A5DAE /* Splosions.sks */,
+				FAED64E2178E0AF300B01F54 /* Snow.sks */,
+				FAED64E3178E0AF300B01F54 /* spark.png */,
+				FAED64E4178E0AF300B01F54 /* Splosions.sks */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -106,7 +105,7 @@
 		FA5B5931178C7EC100336A0E = {
 			isa = PBXGroup;
 			children = (
-				FA5B5943178C7EC100336A0E /* SpriteWalkthrough */,
+				FA5B5943178C7EC100336A0E /* SnowyPlanetBattleMenu */,
 				FA5B593C178C7EC100336A0E /* Frameworks */,
 				FA5B593B178C7EC100336A0E /* Products */,
 			);
@@ -115,7 +114,7 @@
 		FA5B593B178C7EC100336A0E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B593A178C7EC100336A0E /* SpriteWalkthrough.app */,
+				FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */,
 				FA5B595B178C7EC100336A0E /* SpriteWalkthroughTests.xctest */,
 			);
 			name = Products;
@@ -133,33 +132,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA5B5943178C7EC100336A0E /* SpriteWalkthrough */ = {
+		FA5B5943178C7EC100336A0E /* SnowyPlanetBattleMenu */ = {
 			isa = PBXGroup;
 			children = (
+				FAED64F6178E0D1D00B01F54 /* Main.storyboard */,
+				FAED64E8178E0B3500B01F54 /* MenuScene.h */,
+				FAED64E9178E0B3500B01F54 /* MenuScene.m */,
+				FAED64EA178E0B3500B01F54 /* SpriteAppDelegate.h */,
+				FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */,
+				FAED64EC178E0B3500B01F54 /* SpriteMainScene.h */,
+				FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */,
+				FAED64EE178E0B3500B01F54 /* SpriteViewController.h */,
+				FAED64EF178E0B3500B01F54 /* SpriteViewController.m */,
 				FA380A24178DCAFE005A5DAE /* Particles */,
 				FA5B597A178C900400336A0E /* Images */,
 				FA5B5944178C7EC100336A0E /* Supporting Files */,
-				FA5B594C178C7EC100336A0E /* SpriteAppDelegate.h */,
-				FA5B594D178C7EC100336A0E /* SpriteAppDelegate.m */,
-				FA5B594F178C7EC100336A0E /* Main.storyboard */,
-				FA5B5952178C7EC100336A0E /* SpriteViewController.h */,
-				FA5B5953178C7EC100336A0E /* SpriteViewController.m */,
-				FA5B5955178C7EC100336A0E /* Images.xcassets */,
-				FA5B5977178C886D00336A0E /* SpaceshipScene.h */,
-				FA5B5978178C886D00336A0E /* SpaceshipScene.m */,
-				FA380A32178E0605005A5DAE /* SpriteMainScene.h */,
-				FA380A33178E0605005A5DAE /* SpriteMainScene.m */,
 			);
+			name = SnowyPlanetBattleMenu;
 			path = SpriteWalkthrough;
 			sourceTree = "<group>";
 		};
 		FA5B5944178C7EC100336A0E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B5945178C7EC100336A0E /* SpriteWalkthrough-Info.plist */,
-				FA5B5946178C7EC100336A0E /* InfoPlist.strings */,
-				FA5B5949178C7EC100336A0E /* main.m */,
-				FA5B594B178C7EC100336A0E /* SpriteWalkthrough-Prefix.pch */,
+				FAED64DF178E0ADE00B01F54 /* InfoPlist.strings */,
+				FAED64DA178E0AD600B01F54 /* main.m */,
+				FAED64DB178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist */,
+				FAED64DC178E0AD600B01F54 /* SnowyPlanetBattleMenu-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -167,8 +166,8 @@
 		FA5B597A178C900400336A0E /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FA5B597D178CBDAC00336A0E /* easy_button.png */,
-				FA5B597F178CC6D400336A0E /* a.png */,
+				FAED64F4178E0B4000B01F54 /* Images.xcassets */,
+				FAED64D8178E0AB700B01F54 /* easy_button.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -190,7 +189,7 @@
 			);
 			name = SpriteWalkthrough;
 			productName = SpriteWalkthrough;
-			productReference = FA5B593A178C7EC100336A0E /* SpriteWalkthrough.app */;
+			productReference = FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FA5B595A178C7EC100336A0E /* SpriteWalkthroughTests */ = {
@@ -226,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA5B5935178C7EC100336A0E /* Build configuration list for PBXProject "SpriteWalkthrough" */;
+			buildConfigurationList = FA5B5935178C7EC100336A0E /* Build configuration list for PBXProject "SnowyPlanetBattleMenu" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -250,14 +249,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5B5956178C7EC100336A0E /* Images.xcassets in Resources */,
-				FA380A2B178DCC6E005A5DAE /* Snow.sks in Resources */,
-				FA5B5948178C7EC100336A0E /* InfoPlist.strings in Resources */,
-				FA380A2C178DCC6E005A5DAE /* spark.png in Resources */,
-				FA5B5951178C7EC100336A0E /* Main.storyboard in Resources */,
-				FA5B5980178CC6D400336A0E /* a.png in Resources */,
-				FA380A31178E02EA005A5DAE /* Splosions.sks in Resources */,
-				FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */,
+				FAED64E5178E0AF300B01F54 /* Snow.sks in Resources */,
+				FAED64E1178E0ADE00B01F54 /* InfoPlist.strings in Resources */,
+				FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */,
+				FAED64F8178E0D1D00B01F54 /* Main.storyboard in Resources */,
+				FAED64E6178E0AF300B01F54 /* spark.png in Resources */,
+				FAED64DE178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist in Resources */,
+				FAED64E7178E0AF300B01F54 /* Splosions.sks in Resources */,
+				FAED64D9178E0AB700B01F54 /* easy_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */,
-				FA5B594A178C7EC100336A0E /* main.m in Sources */,
-				FA5B594E178C7EC100336A0E /* SpriteAppDelegate.m in Sources */,
-				FA380A34178E0605005A5DAE /* SpriteMainScene.m in Sources */,
-				FA5B5954178C7EC100336A0E /* SpriteViewController.m in Sources */,
+				FAED64F3178E0B3500B01F54 /* SpriteViewController.m in Sources */,
+				FAED64DD178E0AD600B01F54 /* main.m in Sources */,
+				FAED64F1178E0B3500B01F54 /* SpriteAppDelegate.m in Sources */,
+				FAED64F2178E0B3500B01F54 /* SpriteMainScene.m in Sources */,
+				FAED64F0178E0B3500B01F54 /* MenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,18 +300,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA5B5946178C7EC100336A0E /* InfoPlist.strings */ = {
+		FAED64DF178E0ADE00B01F54 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA5B5947178C7EC100336A0E /* en */,
+				FAED64E0178E0ADE00B01F54 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FA5B594F178C7EC100336A0E /* Main.storyboard */ = {
+		FAED64F6178E0D1D00B01F54 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FA5B5950178C7EC100336A0E /* Base */,
+				FAED64F7178E0D1D00B01F54 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -396,9 +395,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpriteWalkthrough/SpriteWalkthrough-Prefix.pch";
-				INFOPLIST_FILE = "SpriteWalkthrough/SpriteWalkthrough-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Info.plist";
+				PRODUCT_NAME = SnowyPlanetBattleMenu;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -409,9 +408,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpriteWalkthrough/SpriteWalkthrough-Prefix.pch";
-				INFOPLIST_FILE = "SpriteWalkthrough/SpriteWalkthrough-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Info.plist";
+				PRODUCT_NAME = SnowyPlanetBattleMenu;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -459,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA5B5935178C7EC100336A0E /* Build configuration list for PBXProject "SpriteWalkthrough" */ = {
+		FA5B5935178C7EC100336A0E /* Build configuration list for PBXProject "SnowyPlanetBattleMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA5B596A178C7EC100336A0E /* Debug */,

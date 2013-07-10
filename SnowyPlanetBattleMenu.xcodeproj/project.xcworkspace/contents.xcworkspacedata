@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SpriteWalkthrough.xcodeproj">
+      location = "self:SnowyPlanetBattleMenu.xcodeproj">
    </FileRef>
 </Workspace>

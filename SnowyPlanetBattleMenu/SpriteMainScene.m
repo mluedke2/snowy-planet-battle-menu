@@ -7,6 +7,7 @@
 //
 
 #import "SpriteMainScene.h"
+#import "MenuScene.h"
 
 @implementation SpriteMainScene
 
@@ -38,5 +39,22 @@
     endingNode.name = @"endingNode";
     return endingNode;
 }
+
+- (void)touchesBegan:(NSSet*) touches withEvent:(UIEvent *)event
+{
+    SKNode *endingNode = [self childNodeWithName:@"endingNode"];
+    if (endingNode != nil)
+    {
+        endingNode.name = nil;
+       
+            SKScene *menuScene = [[MenuScene alloc]
+                                       initWithSize:self.size];
+            SKTransition *doors = [SKTransition
+                                   doorsOpenHorizontalWithDuration:0.5];
+            [self.view presentScene:menuScene transition:doors];
+        
+    }
+}
+
 
 @end

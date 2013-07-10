@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SpaceshipScene : SKScene
+@interface MenuScene : SKScene
 
 @property BOOL contentCreated;
 

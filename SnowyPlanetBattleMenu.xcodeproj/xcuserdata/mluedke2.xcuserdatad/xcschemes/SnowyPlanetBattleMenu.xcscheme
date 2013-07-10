@@ -45,7 +45,7 @@
             BlueprintIdentifier = "FA5B5939178C7EC100336A0E"
             BuildableName = "SpriteWalkthrough.app"
             BlueprintName = "SpriteWalkthrough"
-            ReferencedContainer = "container:SpriteWalkthrough.xcodeproj">
+            ReferencedContainer = "container:SnowyPlanetBattleMenu.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "FA5B5939178C7EC100336A0E"
             BuildableName = "SpriteWalkthrough.app"
             BlueprintName = "SpriteWalkthrough"
-            ReferencedContainer = "container:SpriteWalkthrough.xcodeproj">
+            ReferencedContainer = "container:SnowyPlanetBattleMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
