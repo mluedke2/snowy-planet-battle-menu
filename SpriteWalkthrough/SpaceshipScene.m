@@ -33,12 +33,12 @@
   */
     
     
-    //add rocks!
-    SKAction *makeRocks = [SKAction sequence: @[
-                                                [SKAction performSelector:@selector(addRock) onTarget:self],
+    //add snowFlake!
+    SKAction *makeSnowFlakes = [SKAction sequence: @[
+                                                [SKAction performSelector:@selector(addSnowFlake) onTarget:self],
                                                 [SKAction waitForDuration:0.10 withRange:0.15]
                                                 ]];
-    [self runAction: [SKAction repeatActionForever:makeRocks]];
+    [self runAction: [SKAction repeatActionForever:makeSnowFlakes]];
     
     
     // and buttons!
@@ -72,6 +72,24 @@
     
 }
 
+- (void)buttonChoice:(UIButton *)sender {
+    
+    SKAction *shootLightAndDisappear = [SKAction sequence:@[
+                                                            [SKAction moveTo:[self convertPoint:CGPointMake(CGRectGetMidX(sender.frame), CGRectGetMidY(sender.frame)) toNode:[self childNodeWithName:@"dancingTitle"]] duration:0.5],
+                                                            [SKAction removeFromParent]
+                                                            ]];
+    
+    SKNode *light1 = [[self childNodeWithName:@"dancingTitle"] childNodeWithName:@"light1"];
+    SKNode *light2 = [[self childNodeWithName:@"dancingTitle"] childNodeWithName:@"light2"];
+    [light1 removeAllActions];
+    [light2 removeAllActions];
+    [light1 runAction:shootLightAndDisappear];
+    [light2 runAction:shootLightAndDisappear];
+    
+    // TODO: insert 'splosions
+    
+}
+
 -(void)makeButtons {
     
     // TODO: DRY this into a for loop (trick is getting the frames calculated right!)
@@ -81,6 +99,7 @@
     [button1 setTitle:@"Option 1" forState:UIControlStateNormal];
     [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button1.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button1 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
     UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 200, 90)];
@@ -88,6 +107,7 @@
     [button2 setTitle:@"Option 2" forState:UIControlStateNormal];
     [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button2.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button2 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
     
     UIButton *button3 = [[UIButton alloc] initWithFrame:CGRectMake(150, 700, 200, 90)];
@@ -95,6 +115,7 @@
     [button3 setTitle:@"Option 3" forState:UIControlStateNormal];
     [button3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button3.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button3 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button3];
     
     UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-350, 700, 200, 90)];
@@ -102,6 +123,7 @@
     [button4 setTitle:@"Option 4" forState:UIControlStateNormal];
     [button4 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button4.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button4 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button4];
     
     UIButton *button5 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-300, 500, 200, 90)];
@@ -109,6 +131,7 @@
     [button5 setTitle:@"Option 5" forState:UIControlStateNormal];
     [button5 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button5.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button5 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button5];
     
     UIButton *button6 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 250, 300, 200, 90)];
@@ -116,6 +139,7 @@
     [button6 setTitle:@"Option 6" forState:UIControlStateNormal];
     [button6 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button6.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+    [button6 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button6];
     
 
@@ -123,36 +147,42 @@
     label1.position = CGPointMake(150, self.frame.size.height - 345);
     label1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label1.physicsBody.dynamic = NO;
+    label1.name = @"option1";
     [self addChild:label1];
     
     SKNode *label2 = [SKNode new];
     label2.position = CGPointMake(200, self.frame.size.height - 545);
     label2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label2.physicsBody.dynamic = NO;
+    label2.name = @"option2";
     [self addChild:label2];
     
     SKNode *label3 = [SKNode new];
     label3.position = CGPointMake(250, self.frame.size.height - 745);
     label3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label3.physicsBody.dynamic = NO;
+    label3.name = @"option3";
     [self addChild:label3];
     
     SKNode *label4 = [SKNode new];
     label4.position = CGPointMake(self.frame.size.width - 250, self.frame.size.height - 745);
     label4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label4.physicsBody.dynamic = NO;
+    label4.name = @"option4";
     [self addChild:label4];
     
     SKNode *label5 = [SKNode new];
     label5.position = CGPointMake(self.frame.size.width - 200, self.frame.size.height - 545);
     label5.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label5.physicsBody.dynamic = NO;
+    label5.name = @"option5";
     [self addChild:label5];
     
     SKNode *label6 = [SKNode new];
     label6.position = CGPointMake(self.frame.size.width - 150, self.frame.size.height - 345);
     label6.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
     label6.physicsBody.dynamic = NO;
+    label6.name = @"option6";
     [self addChild:label6];
      
 
@@ -161,6 +191,7 @@
 - (SKLabelNode *)newDancingTitle
 {
     SKLabelNode *dancingTitle = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
+    dancingTitle.name = @"dancingTitle";
     
     // TODO: make more swoopy
     [dancingTitle setText:@"Welcome!"];
@@ -288,8 +319,10 @@
     
     if (forward) {
         [light runAction:[SKAction repeatActionForever:orbit]];
+        light.name = @"light1";
     } else {
         [light runAction:[SKAction repeatActionForever:[orbit reversedAction]]];
+        light.name = @"light2";
     }
     
     return light;
@@ -304,19 +337,19 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     return skRandf() * (high - low) + low;
 }
 
-- (void) addRock
+- (void) addSnowFlake
 {
-    SKSpriteNode *rock = [[SKSpriteNode alloc] initWithColor:[SKColor
+    SKSpriteNode *snowFlake = [[SKSpriteNode alloc] initWithColor:[SKColor
                                                               whiteColor] size:CGSizeMake(4,4)];
-    rock.position = CGPointMake(skRand(0, self.size.width),
+    snowFlake.position = CGPointMake(skRand(0, self.size.width),
                                 self.size.height-50);
-    rock.name = @"rock";
-    rock.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:rock.size];
-    rock.physicsBody.usesPreciseCollisionDetection = NO;
-    [self addChild:rock];
+    snowFlake.name = @"snowFlake";
+    snowFlake.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:snowFlake.size];
+    snowFlake.physicsBody.usesPreciseCollisionDetection = NO;
+    [self addChild:snowFlake];
     
     // this is important for frame rate!
-    [self performSelector:@selector(removeSnowFlake:) withObject:rock afterDelay:45.0];
+    [self performSelector:@selector(removeSnowFlake:) withObject:snowFlake afterDelay:35.0];
     
 }
 
@@ -328,6 +361,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 -(void)didSimulatePhysics
 {
+    // for frame rate reasons, once a rock falls below 0 it is removed (otherwise it actually still exists, just off the screen!)
+    
     [self enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode *node,
                                                            BOOL *stop) {
         if (node.position.y < 0)
