@@ -21,10 +21,7 @@
 		FA5B595D178C7EC100336A0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B595C178C7EC100336A0E /* XCTest.framework */; };
 		FA5B595E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B595F178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
-		FA5B5967178C7EC100336A0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA5B5965178C7EC100336A0E /* InfoPlist.strings */; };
-		FA5B5969178C7EC100336A0E /* SpriteWalkthroughTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5968178C7EC100336A0E /* SpriteWalkthroughTests.m */; };
 		FA5B5973178C7ED500336A0E /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5972178C7ED500336A0E /* SpriteKit.framework */; };
-		FA5B5976178C80F400336A0E /* HelloScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5975178C80C100336A0E /* HelloScene.m */; };
 		FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B5978178C886D00336A0E /* SpaceshipScene.m */; };
 		FA5B597E178CBDAC00336A0E /* easy_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597D178CBDAC00336A0E /* easy_button.png */; };
 		FA5B5980178CC6D400336A0E /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5B597F178CC6D400336A0E /* a.png */; };
@@ -59,12 +56,7 @@
 		FA5B5955178C7EC100336A0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA5B595B178C7EC100336A0E /* SpriteWalkthroughTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpriteWalkthroughTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B595C178C7EC100336A0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		FA5B5964178C7EC100336A0E /* SpriteWalkthroughTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteWalkthroughTests-Info.plist"; sourceTree = "<group>"; };
-		FA5B5966178C7EC100336A0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FA5B5968178C7EC100336A0E /* SpriteWalkthroughTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteWalkthroughTests.m; sourceTree = "<group>"; };
 		FA5B5972178C7ED500336A0E /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		FA5B5974178C80C100336A0E /* HelloScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloScene.h; sourceTree = "<group>"; };
-		FA5B5975178C80C100336A0E /* HelloScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloScene.m; sourceTree = "<group>"; };
 		FA5B5977178C886D00336A0E /* SpaceshipScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
 		FA5B5978178C886D00336A0E /* SpaceshipScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
 		FA5B597D178CBDAC00336A0E /* easy_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = easy_button.png; sourceTree = "<group>"; };
@@ -109,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				FA5B5943178C7EC100336A0E /* SpriteWalkthrough */,
-				FA5B5962178C7EC100336A0E /* SpriteWalkthroughTests */,
 				FA5B593C178C7EC100336A0E /* Frameworks */,
 				FA5B593B178C7EC100336A0E /* Products */,
 			);
@@ -148,8 +139,6 @@
 				FA5B5952178C7EC100336A0E /* SpriteViewController.h */,
 				FA5B5953178C7EC100336A0E /* SpriteViewController.m */,
 				FA5B5955178C7EC100336A0E /* Images.xcassets */,
-				FA5B5974178C80C100336A0E /* HelloScene.h */,
-				FA5B5975178C80C100336A0E /* HelloScene.m */,
 				FA5B5977178C886D00336A0E /* SpaceshipScene.h */,
 				FA5B5978178C886D00336A0E /* SpaceshipScene.m */,
 			);
@@ -163,24 +152,6 @@
 				FA5B5946178C7EC100336A0E /* InfoPlist.strings */,
 				FA5B5949178C7EC100336A0E /* main.m */,
 				FA5B594B178C7EC100336A0E /* SpriteWalkthrough-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA5B5962178C7EC100336A0E /* SpriteWalkthroughTests */ = {
-			isa = PBXGroup;
-			children = (
-				FA5B5968178C7EC100336A0E /* SpriteWalkthroughTests.m */,
-				FA5B5963178C7EC100336A0E /* Supporting Files */,
-			);
-			path = SpriteWalkthroughTests;
-			sourceTree = "<group>";
-		};
-		FA5B5963178C7EC100336A0E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA5B5964178C7EC100336A0E /* SpriteWalkthroughTests-Info.plist */,
-				FA5B5965178C7EC100336A0E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -285,7 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5B5967178C7EC100336A0E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5B5979178C891700336A0E /* SpaceshipScene.m in Sources */,
-				FA5B5976178C80F400336A0E /* HelloScene.m in Sources */,
 				FA5B594A178C7EC100336A0E /* main.m in Sources */,
 				FA5B594E178C7EC100336A0E /* SpriteAppDelegate.m in Sources */,
 				FA5B5954178C7EC100336A0E /* SpriteViewController.m in Sources */,
@@ -308,7 +277,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA5B5969178C7EC100336A0E /* SpriteWalkthroughTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,14 +305,6 @@
 				FA5B5950178C7EC100336A0E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FA5B5965178C7EC100336A0E /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA5B5966178C7EC100336A0E /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

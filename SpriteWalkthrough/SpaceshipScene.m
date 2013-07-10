@@ -76,17 +76,25 @@
     
     SKNode *dancingTitle = [self childNodeWithName:@"dancingTitle"];
     
+    CGPoint buttonCenter = CGPointMake(CGRectGetMidX(sender.frame), self.frame.size.height - CGRectGetMidY(sender.frame));
+    
     SKAction *shootLightAndDisappear = [SKAction sequence:@[
-                                                            [SKAction moveTo:[self convertPoint:CGPointMake(CGRectGetMidX(sender.frame), CGRectGetMidY(sender.frame)) toNode:dancingTitle] duration:0.5],
+                                                            [SKAction scaleBy:4.0 duration:1.0],
+                                                            [SKAction moveTo:[self convertPoint:buttonCenter toNode:dancingTitle] duration:0.5],
                                                             [SKAction removeFromParent]
                                                             ]];
     
+    SKNode *light1 = [dancingTitle childNodeWithName:@"light1"];
+    SKNode *light2 = [dancingTitle childNodeWithName:@"light2"];
     
-    [[dancingTitle childNodeWithName:@"light1"] runAction:shootLightAndDisappear];
-    [[dancingTitle childNodeWithName:@"light2"] runAction:shootLightAndDisappear];
-    
-    // stop the little snowflakes; we need all the frame rate we can get for this!!
+     // stop all animations; we need all the frame rate we can get for this!!
+    [light1 removeAllActions];
+    [light2 removeAllActions];
     [self removeAllActions];
+    [dancingTitle removeAllActions];
+    
+    [light1 runAction:shootLightAndDisappear];
+    [light2 runAction:shootLightAndDisappear];
     
     // TODO: insert 'splosions!
     

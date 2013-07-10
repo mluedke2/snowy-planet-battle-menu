@@ -8,7 +8,7 @@
 
 #import "SpriteViewController.h"
 #import <SpriteKit/SpriteKit.h>
-#import "HelloScene.h"
+#import "SpaceshipScene.h"
 
 @interface SpriteViewController ()
 
@@ -30,10 +30,10 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    HelloScene* hello = [[HelloScene alloc]
+    SpaceshipScene *scene = [[SpaceshipScene alloc]
                          initWithSize:CGSizeMake(768,1024)];
     SKView *spriteView = (SKView*) self.view;
-    [spriteView presentScene: hello];
+    [spriteView presentScene: scene];
 }
 
 - (void)didReceiveMemoryWarning
