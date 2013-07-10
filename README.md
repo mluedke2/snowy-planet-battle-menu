@@ -1,7 +1,7 @@
 The Snowy Planet Battle Menu
 ============================
 
-An fun little example menu for iOS 7+ and OS X 10.9+ using SpriteKit. Using that framework and relatively few lines of code, you can get some cool interactivity going on in your menus or other views.
+A fun little example menu for iOS 7+ and OS X 10.9+ using SpriteKit. Using that framework and relatively few lines of code, you can get some cool interactivity going on in your menus or other views.
 
 There is a title floating around with some orbiting lasers, that then shoot at whatever button you press. The scene changes to a new screen, demonstrating how you can make a transition to a screen of your choice. In this example, just tap anywhere on the screen to return to the menu.
 

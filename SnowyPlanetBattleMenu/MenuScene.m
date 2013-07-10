@@ -21,18 +21,8 @@
 }
 - (void)createSceneContents
 {
-    // 70-130-180
     self.backgroundColor = [SKColor colorWithRed:120.0/255.0 green:180.0/255.0 blue:230.0/255.0 alpha:1.0];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    
-    /*
-    // add spaceship!
-    SKSpriteNode *spaceship = [self newSpaceship];
-    spaceship.position = CGPointMake(CGRectGetMidX(self.frame)-150,
-                                     CGRectGetMidY(self.frame)-250);
-    [self addChild:spaceship];
-  */
-    
     
     //add snowFlake!
     SKAction *makeSnowFlakes = [SKAction sequence: @[
@@ -45,10 +35,7 @@
     // and buttons!
     [self makeButtons];
     
-    // and a title!
-  //  [self makeTitle];
-    
-    // or maybe a dancing title!
+    // and a dancing title!
     SKLabelNode *dancingTitle = [self newDancingTitle];
     dancingTitle.position = CGPointMake(CGRectGetMidX(self.frame)-45, self.frame.size.height - 150);
     [self addChild:dancingTitle];
@@ -57,20 +44,8 @@
     SKEmitterNode *snow = [self newSnowEmitter];
     snow.particlePosition = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height);
     snow.particlePositionRange = CGPointMake(self.frame.size.width, 0.0);
-//    snow.emissionAngleRange = 100.0;
     [self addChild:snow];
 
-}
-
-- (void)makeTitle{
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.frame)-200, 75, 400, 150)];
-    [titleLabel setText:@"Welcome!"];
-    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:52.0]];
-    [titleLabel setTextColor:[UIColor whiteColor]];
-    [self.view addSubview:titleLabel];
-    
 }
 
 - (void)buttonChoice:(UIButton *)sender {
@@ -131,118 +106,34 @@
     
     }];
     
-    /*
-    // make a sprite replace the button, and have it spin away!
-    SKSpriteNode *buttonClone = [SKSpriteNode spriteNodeWithImageNamed:@"easy_button"];
-    buttonClone.position = CGPointMake(buttonCenter.x-100, buttonCenter.y-45);
-    buttonClone.size = sender.frame.size;
-    buttonClone.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:buttonClone.size];
-    buttonClone.physicsBody.dynamic = YES;
-    buttonClone.physicsBody.affectedByGravity = YES;
-    [self addChild:buttonClone];
-    
-    */
-    
-   
-    
 }
 
 -(void)makeButtons {
     
-    // TODO: DRY this into a for loop (trick is getting the frames calculated right!)
-  
-    UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(50, 300, 200, 90)];
-    [button1 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button1 setTitle:@"Option 1" forState:UIControlStateNormal];
-    [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button1.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button1 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button1];
+    for (int i = 0; i < 6; i++){
+        
+        // crazy math!
+        CGFloat button_x = (50 + 50*i)*(-1)*((i/3)-1) + (self.frame.size.width - 350 + 50*(i%3))*(i/3);
+        CGFloat button_y = (300 + 200*i)*(-1)*((i/3)-1) + (700 - 200*(i%3))*(i/3);
+        
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(button_x, button_y, 200, 90)];
+        [button setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
+        [button setTitle:[NSString stringWithFormat:@"Option %i", (i+1)] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
+        [button addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
+        SKNode *node = [SKNode new];
+        node.position = CGPointMake(button_x + 100, self.frame.size.height - button_y - 45);
+        node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button.frame.size];
+        node.physicsBody.dynamic = NO;
+        node.name = @"node";
+        [self addChild:node];
+        
+        
+    }
     
-    UIButton *button2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 500, 200, 90)];
-    [button2 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button2 setTitle:@"Option 2" forState:UIControlStateNormal];
-    [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button2.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button2 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button2];
-    
-    UIButton *button3 = [[UIButton alloc] initWithFrame:CGRectMake(150, 700, 200, 90)];
-    [button3 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button3 setTitle:@"Option 3" forState:UIControlStateNormal];
-    [button3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button3.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button3 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button3];
-    
-    UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-350, 700, 200, 90)];
-    [button4 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button4 setTitle:@"Option 4" forState:UIControlStateNormal];
-    [button4 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button4.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button4 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button4];
-    
-    UIButton *button5 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width-300, 500, 200, 90)];
-    [button5 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button5 setTitle:@"Option 5" forState:UIControlStateNormal];
-    [button5 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button5.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button5 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button5];
-    
-    UIButton *button6 = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 250, 300, 200, 90)];
-    [button6 setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-    [button6 setTitle:@"Option 6" forState:UIControlStateNormal];
-    [button6 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button6.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-    [button6 addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button6];
-    
-
-    SKNode *label1 = [SKNode new];
-    label1.position = CGPointMake(150, self.frame.size.height - 345);
-    label1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label1.physicsBody.dynamic = NO;
-    label1.name = @"option1";
-    [self addChild:label1];
-    
-    SKNode *label2 = [SKNode new];
-    label2.position = CGPointMake(200, self.frame.size.height - 545);
-    label2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label2.physicsBody.dynamic = NO;
-    label2.name = @"option2";
-    [self addChild:label2];
-    
-    SKNode *label3 = [SKNode new];
-    label3.position = CGPointMake(250, self.frame.size.height - 745);
-    label3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label3.physicsBody.dynamic = NO;
-    label3.name = @"option3";
-    [self addChild:label3];
-    
-    SKNode *label4 = [SKNode new];
-    label4.position = CGPointMake(self.frame.size.width - 250, self.frame.size.height - 745);
-    label4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label4.physicsBody.dynamic = NO;
-    label4.name = @"option4";
-    [self addChild:label4];
-    
-    SKNode *label5 = [SKNode new];
-    label5.position = CGPointMake(self.frame.size.width - 200, self.frame.size.height - 545);
-    label5.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label5.physicsBody.dynamic = NO;
-    label5.name = @"option5";
-    [self addChild:label5];
-    
-    SKNode *label6 = [SKNode new];
-    label6.position = CGPointMake(self.frame.size.width - 150, self.frame.size.height - 345);
-    label6.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button1.frame.size];
-    label6.physicsBody.dynamic = NO;
-    label6.name = @"option6";
-    [self addChild:label6];
-     
-
 }
 
 - (SKLabelNode *)newDancingTitle
@@ -255,32 +146,35 @@
     dancingTitle.fontColor = [SKColor yellowColor];
     dancingTitle.fontSize = 72.0;
     
+    float hover_duration = 0.3;
+    float movement_duration = 0.1;
+    
     SKAction *hover = [SKAction sequence:@[
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:hover_duration],
                                            
-                                           [SKAction moveByX:0.0 y:-15.0 duration:0.1],
-                                           [SKAction moveByX:10.0 y:-10.0 duration:0.1],
-                                           [SKAction moveByX:20.0 y:-5.0 duration:0.1],
-                                           [SKAction moveByX:30 y:0.0 duration:0.1],
-                                           [SKAction moveByX:20.0 y:5.0 duration:0.1],
-                                           [SKAction moveByX:10.0 y:10.0 duration:0.1],
-                                           [SKAction moveByX:0.0 y:15.0 duration:0.1],
+                                           [SKAction moveByX:0.0 y:-15.0 duration:movement_duration],
+                                           [SKAction moveByX:10.0 y:-10.0 duration:movement_duration],
+                                           [SKAction moveByX:20.0 y:-5.0 duration:movement_duration],
+                                           [SKAction moveByX:30 y:0.0 duration:movement_duration],
+                                           [SKAction moveByX:20.0 y:5.0 duration:movement_duration],
+                                           [SKAction moveByX:10.0 y:10.0 duration:movement_duration],
+                                           [SKAction moveByX:0.0 y:15.0 duration:movement_duration],
                                            
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
+                                           [SKAction moveByX:0.0 y:5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:5.0 duration:hover_duration],
+                                           [SKAction moveByX:0.0 y:-5.0 duration:hover_duration],
                                            
-                                           [SKAction moveByX:0.0 y:-15.0 duration:0.1],
-                                           [SKAction moveByX:-10.0 y:-10.0 duration:0.1],
-                                           [SKAction moveByX:-20.0 y:-5.0 duration:0.1],
-                                           [SKAction moveByX:-30 y:0.0 duration:0.1],
-                                           [SKAction moveByX:-20.0 y:5.0 duration:0.1],
-                                           [SKAction moveByX:-10.0 y:10.0 duration:0.1],
-                                           [SKAction moveByX:0.0 y:15.0 duration:0.1]
+                                           [SKAction moveByX:0.0 y:-15.0 duration:movement_duration],
+                                           [SKAction moveByX:-10.0 y:-10.0 duration:movement_duration],
+                                           [SKAction moveByX:-20.0 y:-5.0 duration:movement_duration],
+                                           [SKAction moveByX:-30 y:0.0 duration:movement_duration],
+                                           [SKAction moveByX:-20.0 y:5.0 duration:movement_duration],
+                                           [SKAction moveByX:-10.0 y:10.0 duration:movement_duration],
+                                           [SKAction moveByX:0.0 y:15.0 duration:movement_duration]
                                            
                                            ]];
     hover.timingMode = SKActionTimingEaseInEaseOut;
@@ -303,41 +197,6 @@
     return dancingTitle;
 }
 
-- (SKSpriteNode *)newSpaceship
-{
-    SKSpriteNode *hull = [[SKSpriteNode alloc] initWithColor:[SKColor
-                                                              darkGrayColor] size:CGSizeMake(64,32)];
-    SKAction *hover = [SKAction sequence:@[
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:300 y:0.0 duration:0.5],
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:5.0 duration:0.3],
-                                           [SKAction moveByX:0.0 y:-5.0 duration:0.3],
-                                           [SKAction moveByX:-300.0 y:0.0 duration:0.5]]];
-    hover.timingMode = SKActionTimingEaseInEaseOut;
-    [hull runAction: [SKAction repeatActionForever:hover]];
-    
-    // add light one, it goes counterclockwise
-    SKSpriteNode *light1 = [self newLightForward:YES];
-    light1.position = CGPointMake(25.0, 6.0);
-    [hull addChild:light1];
-    
-    // add light two, it goes clockwise
-    SKSpriteNode *light2 = [self newLightForward:NO];
-    light2.position = CGPointMake(45.0, 6.0);
-    [hull addChild:light2];
-    
-    // physics! science!
-    hull.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hull.size];
-    hull.physicsBody.dynamic = NO;
-    
-    return hull;
-}
-
 - (SKSpriteNode *)newLightForward:(BOOL)forward
 {
     SKSpriteNode *light = [[SKSpriteNode alloc] initWithColor:[SKColor
@@ -349,14 +208,6 @@
     SKAction *blinkForever = [SKAction repeatActionForever:blink];
     blink.timingMode = SKActionTimingEaseInEaseOut;
     [light runAction: blinkForever];
-    
-   
-    /*
-    // create a circular path around the ship
-    CGMutablePathRef circlePath = CGPathCreateMutable();
-    CGPathAddEllipseInRect(circlePath, NULL, CGRectMake(-47.3,-22.3,50,50));
-    SKAction *orbit = [SKAction followPath:circlePath duration:0.1];
-    */
     
     // this makes an octagon, not a circle! but the elliptical CGPath doesn't seem to work yet, and would be slower anyway
     float orbit_radius = 30.0;
@@ -406,11 +257,11 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addChild:snowFlake];
     
     // this is important for frame rate!
-    [self performSelector:@selector(removeSnowFlake:) withObject:snowFlake afterDelay:35.0];
+    [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:35.0];
     
 }
 
-- (void)removeSnowFlake:(SKNode *)snowFlake {
+- (void)meltSnowFlake:(SKNode *)snowFlake {
     
     [snowFlake removeFromParent];
     
@@ -418,9 +269,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 -(void)didSimulatePhysics
 {
-    // for frame rate reasons, once a rock falls below 0 it is removed (otherwise it actually still exists, just off the screen!)
+    // for frame rate reasons, once a snowFlake falls below 0 it is removed (otherwise it actually still exists, just off the screen!)
     
-    [self enumerateChildNodesWithName:@"rock" usingBlock:^(SKNode *node,
+    [self enumerateChildNodesWithName:@"snowFlake" usingBlock:^(SKNode *node,
                                                            BOOL *stop) {
         if (node.position.y < 0)
             [node removeFromParent];
