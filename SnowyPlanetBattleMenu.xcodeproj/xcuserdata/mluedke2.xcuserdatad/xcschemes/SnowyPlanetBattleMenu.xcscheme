@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA5B5939178C7EC100336A0E"
-            BuildableName = "SpriteWalkthrough.app"
+            BuildableName = "SnowyPlanetBattleMenu.app"
             BlueprintName = "SpriteWalkthrough"
             ReferencedContainer = "container:SnowyPlanetBattleMenu.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA5B5939178C7EC100336A0E"
-            BuildableName = "SpriteWalkthrough.app"
+            BuildableName = "SnowyPlanetBattleMenu.app"
             BlueprintName = "SpriteWalkthrough"
             ReferencedContainer = "container:SnowyPlanetBattleMenu.xcodeproj">
          </BuildableReference>
