@@ -254,10 +254,25 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     snowFlake.name = @"snowFlake";
     snowFlake.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:snowFlake.size];
     snowFlake.physicsBody.usesPreciseCollisionDetection = NO;
+    
+    // slow down the snowflakes, otherwise they fall like stones
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:(0.010) target:self selector:@selector(slowDown:) userInfo:snowFlake repeats:YES];
+
     [self addChild:snowFlake];
     
     // this is important for frame rate!
     [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:35.0];
+    
+}
+
+- (void)slowDown:(NSTimer *)fallingTimer {
+    CGFloat thrust = skRand(0.55, 0.68);
+    CGFloat shipDirection = skRand(1.41, 1.73);
+  //  NSLog(@"dir %.2f", shipDirection);
+    CGPoint thrustVector = CGPointMake(thrust*cosf(shipDirection),
+                                       thrust*sinf(shipDirection));
+    SKSpriteNode *snowFlake = (SKSpriteNode *)fallingTimer.userInfo;
+    [snowFlake.physicsBody applyForce:thrustVector];
     
 }
 
