@@ -253,10 +253,11 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                                 self.size.height-50);
     snowFlake.name = @"snowFlake";
     snowFlake.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:snowFlake.size];
+    snowFlake.physicsBody.mass = 0.0007;
     snowFlake.physicsBody.usesPreciseCollisionDetection = NO;
     
     // slow down the snowflakes, otherwise they fall like stones
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:(0.010) target:self selector:@selector(slowDown:) userInfo:snowFlake repeats:YES];
+ //   NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:(0.010) target:self selector:@selector(slowDown:) userInfo:snowFlake repeats:YES];
 
     [self addChild:snowFlake];
     
