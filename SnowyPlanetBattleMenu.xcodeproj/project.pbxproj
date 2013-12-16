@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2CF3A3185ED6020020FC94 /* SpriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */; };
+		FA2CF3A4185ED8650020FC94 /* SpriteViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
@@ -23,10 +25,9 @@
 		FAED64E7178E0AF300B01F54 /* Splosions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAED64E4178E0AF300B01F54 /* Splosions.sks */; };
 		FAED64F0178E0B3500B01F54 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64E9178E0B3500B01F54 /* MenuScene.m */; };
 		FAED64F1178E0B3500B01F54 /* SpriteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */; };
-		FAED64F2178E0B3500B01F54 /* SpriteMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */; };
+		FAED64F2178E0B3500B01F54 /* SpriteEndScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64ED178E0B3500B01F54 /* SpriteEndScene.m */; };
 		FAED64F3178E0B3500B01F54 /* SpriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAED64EF178E0B3500B01F54 /* SpriteViewController.m */; };
 		FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAED64F4178E0B4000B01F54 /* Images.xcassets */; };
-		FAED64F8178E0D1D00B01F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAED64F6178E0D1D00B01F54 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpriteViewController.xib; sourceTree = SOURCE_ROOT; };
 		FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowyPlanetBattleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,12 +61,11 @@
 		FAED64E9178E0B3500B01F54 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuScene.m; path = SnowyPlanetBattleMenu/MenuScene.m; sourceTree = SOURCE_ROOT; };
 		FAED64EA178E0B3500B01F54 /* SpriteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteAppDelegate.h; path = SnowyPlanetBattleMenu/SpriteAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteAppDelegate.m; path = SnowyPlanetBattleMenu/SpriteAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		FAED64EC178E0B3500B01F54 /* SpriteMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteMainScene.h; path = SnowyPlanetBattleMenu/SpriteMainScene.h; sourceTree = SOURCE_ROOT; };
-		FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteMainScene.m; path = SnowyPlanetBattleMenu/SpriteMainScene.m; sourceTree = SOURCE_ROOT; };
+		FAED64EC178E0B3500B01F54 /* SpriteEndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteEndScene.h; path = SnowyPlanetBattleMenu/SpriteEndScene.h; sourceTree = SOURCE_ROOT; };
+		FAED64ED178E0B3500B01F54 /* SpriteEndScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteEndScene.m; path = SnowyPlanetBattleMenu/SpriteEndScene.m; sourceTree = SOURCE_ROOT; };
 		FAED64EE178E0B3500B01F54 /* SpriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpriteViewController.h; path = SnowyPlanetBattleMenu/SpriteViewController.h; sourceTree = SOURCE_ROOT; };
 		FAED64EF178E0B3500B01F54 /* SpriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpriteViewController.m; path = SnowyPlanetBattleMenu/SpriteViewController.m; sourceTree = SOURCE_ROOT; };
 		FAED64F4178E0B4000B01F54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SnowyPlanetBattleMenu/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		FAED64F7178E0D1D00B01F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SnowyPlanetBattleMenu/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,15 +136,15 @@
 		FA5B5943178C7EC100336A0E /* SnowyPlanetBattleMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FAED64F6178E0D1D00B01F54 /* Main.storyboard */,
 				FAED64E8178E0B3500B01F54 /* MenuScene.h */,
 				FAED64E9178E0B3500B01F54 /* MenuScene.m */,
 				FAED64EA178E0B3500B01F54 /* SpriteAppDelegate.h */,
 				FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */,
-				FAED64EC178E0B3500B01F54 /* SpriteMainScene.h */,
-				FAED64ED178E0B3500B01F54 /* SpriteMainScene.m */,
+				FAED64EC178E0B3500B01F54 /* SpriteEndScene.h */,
+				FAED64ED178E0B3500B01F54 /* SpriteEndScene.m */,
 				FAED64EE178E0B3500B01F54 /* SpriteViewController.h */,
 				FAED64EF178E0B3500B01F54 /* SpriteViewController.m */,
+				FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */,
 				FA380A24178DCAFE005A5DAE /* Particles */,
 				FA5B597A178C900400336A0E /* Images */,
 				FA5B5944178C7EC100336A0E /* Supporting Files */,
@@ -252,10 +253,10 @@
 				FAED64E5178E0AF300B01F54 /* Snow.sks in Resources */,
 				FAED64E1178E0ADE00B01F54 /* InfoPlist.strings in Resources */,
 				FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */,
-				FAED64F8178E0D1D00B01F54 /* Main.storyboard in Resources */,
 				FAED64E6178E0AF300B01F54 /* spark.png in Resources */,
 				FAED64DE178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist in Resources */,
 				FAED64E7178E0AF300B01F54 /* Splosions.sks in Resources */,
+				FA2CF3A3185ED6020020FC94 /* SpriteViewController.xib in Resources */,
 				FAED64D9178E0AB700B01F54 /* easy_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,10 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2CF3A4185ED8650020FC94 /* SpriteViewController.xib in Sources */,
 				FAED64F3178E0B3500B01F54 /* SpriteViewController.m in Sources */,
 				FAED64DD178E0AD600B01F54 /* main.m in Sources */,
 				FAED64F1178E0B3500B01F54 /* SpriteAppDelegate.m in Sources */,
-				FAED64F2178E0B3500B01F54 /* SpriteMainScene.m in Sources */,
+				FAED64F2178E0B3500B01F54 /* SpriteEndScene.m in Sources */,
 				FAED64F0178E0B3500B01F54 /* MenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +308,6 @@
 				FAED64E0178E0ADE00B01F54 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FAED64F6178E0D1D00B01F54 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAED64F7178E0D1D00B01F54 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -398,6 +392,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Info.plist";
 				PRODUCT_NAME = SnowyPlanetBattleMenu;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,6 +406,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SnowyPlanetBattleMenu/SnowyPlanetBattleMenu-Info.plist";
 				PRODUCT_NAME = SnowyPlanetBattleMenu;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

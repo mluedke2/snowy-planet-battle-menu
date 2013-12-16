@@ -7,45 +7,45 @@
 //
 
 #import "MenuScene.h"
-#import "SpriteMainScene.h"
+#import "SpriteEndScene.h"
 
 @implementation MenuScene
 
-- (void)didMoveToView:(SKView *)view
-{
+- (void)didMoveToView:(SKView *)view {
     if (!self.contentCreated)
     {
         [self createSceneContents];
         self.contentCreated = YES;
     }
 }
-- (void)createSceneContents
-{
-    self.backgroundColor = [SKColor colorWithRed:120.0/255.0 green:180.0/255.0 blue:230.0/255.0 alpha:1.0];
+- (void)createSceneContents {
+    
     self.scaleMode = SKSceneScaleModeAspectFit;
     
     //add snowFlake!
     SKAction *makeSnowFlakes = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addSnowFlake) onTarget:self],
-                                                [SKAction waitForDuration:0.10 withRange:0.15]
+                                                [SKAction waitForDuration:0.20 withRange:0.15]
                                                 ]];
-    [self runAction: [SKAction repeatActionForever:makeSnowFlakes]];
+    [self runAction: [SKAction repeatAction:makeSnowFlakes count:20]];
     
     
     // and buttons!
-    [self makeButtons];
+   // [self makeButtons];
     
     // and a dancing title!
+    
     SKLabelNode *dancingTitle = [self newDancingTitle];
     dancingTitle.position = CGPointMake(CGRectGetMidX(self.frame)-45, self.frame.size.height - 150);
     [self addChild:dancingTitle];
     
+    
     // add snow!
+    
     SKEmitterNode *snow = [self newSnowEmitter];
     snow.particlePosition = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height);
-    snow.particlePositionRange = CGPointMake(self.frame.size.width, 0.0);
+    snow.particlePositionRange = CGVectorMake(self.frame.size.width, 0.0);
     [self addChild:snow];
-
 }
 
 - (void)buttonChoice:(UIButton *)sender {
@@ -96,7 +96,7 @@
                      [[self.view subviews]
                       makeObjectsPerformSelector:@selector(removeFromSuperview)];
                      
-                     SKScene* mainScene = [[SpriteMainScene alloc]
+                     SKScene* mainScene = [[SpriteEndScene alloc]
                                            initWithSize:self.size];
                      SKTransition *doors = [SKTransition
                                             doorsCloseHorizontalWithDuration:0.5];
@@ -136,8 +136,7 @@
     
 }
 
-- (SKLabelNode *)newDancingTitle
-{
+- (SKLabelNode *)newDancingTitle {
     SKLabelNode *dancingTitle = [[SKLabelNode alloc] initWithFontNamed:@"Helvetica"];
     dancingTitle.name = @"dancingTitle";
     
@@ -177,6 +176,7 @@
                                            [SKAction moveByX:0.0 y:15.0 duration:movement_duration]
                                            
                                            ]];
+     
     hover.timingMode = SKActionTimingEaseInEaseOut;
     [dancingTitle runAction: [SKAction repeatActionForever:hover]];
     
@@ -189,6 +189,7 @@
     SKSpriteNode *light2 = [self newLightForward:NO];
     light2.position = CGPointMake(45.0, 6.0);
     [dancingTitle addChild:light2];
+    
     
     // physics! science!
     dancingTitle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:dancingTitle.frame.size];
@@ -245,8 +246,8 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     return skRandf() * (high - low) + low;
 }
 
-- (void) addSnowFlake
-{
+- (void) addSnowFlake {
+    
     SKSpriteNode *snowFlake = [[SKSpriteNode alloc] initWithColor:[SKColor
                                                               whiteColor] size:CGSizeMake(4,4)];
     snowFlake.position = CGPointMake(skRand(0, self.size.width),
@@ -262,7 +263,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addChild:snowFlake];
     
     // this is important for frame rate!
-    [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:35.0];
+    [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:5.0];
     
 }
 
@@ -270,7 +271,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     CGFloat thrust = skRand(0.55, 0.68);
     CGFloat shipDirection = skRand(1.41, 1.73);
   //  NSLog(@"dir %.2f", shipDirection);
-    CGPoint thrustVector = CGPointMake(thrust*cosf(shipDirection),
+    CGVector thrustVector = CGVectorMake(thrust*cosf(shipDirection),
                                        thrust*sinf(shipDirection));
     SKSpriteNode *snowFlake = (SKSpriteNode *)fallingTimer.userInfo;
     [snowFlake.physicsBody applyForce:thrustVector];
@@ -281,6 +282,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     [snowFlake removeFromParent];
     
+    [self addSnowFlake];
 }
 
 -(void)didSimulatePhysics
@@ -289,8 +291,9 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     
     [self enumerateChildNodesWithName:@"snowFlake" usingBlock:^(SKNode *node,
                                                            BOOL *stop) {
-        if (node.position.y < 0)
+        if (node.position.y < 0) {
             [node removeFromParent];
+        }
     }];
 }
 

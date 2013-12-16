@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Matt Luedke. All rights reserved.
 //
 
-#import "SpriteMainScene.h"
+#import "SpriteEndScene.h"
 #import "MenuScene.h"
 
-@implementation SpriteMainScene
+@implementation SpriteEndScene
 
 - (void)didMoveToView:(SKView *)view
 {

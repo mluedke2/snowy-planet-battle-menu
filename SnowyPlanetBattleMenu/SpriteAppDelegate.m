@@ -7,12 +7,18 @@
 //
 
 #import "SpriteAppDelegate.h"
+#import "SpriteViewController.h"
 
 @implementation SpriteAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    SpriteViewController* vc = [[SpriteViewController alloc] initWithNibName:@"SpriteViewController" bundle:nil];
+    
+    self.window.rootViewController = vc;
+    
     return YES;
 }
 							

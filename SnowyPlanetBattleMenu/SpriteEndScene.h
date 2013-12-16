@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SpriteMainScene : SKScene
+@interface SpriteEndScene : SKScene
 
 @property BOOL contentCreated;
 

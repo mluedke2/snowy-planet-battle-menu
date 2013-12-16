@@ -15,25 +15,26 @@
 @end
 
 @implementation SpriteViewController
+@synthesize skView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    SKView *spriteView = (SKView*) self.view;
-    spriteView.showsDrawCount = YES;
-    spriteView.showsNodeCount = YES;
-    spriteView.showsFPS = YES;
+    skView.showsDrawCount = YES;
+    skView.showsNodeCount = YES;
+    skView.showsFPS = YES;
     
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    
     MenuScene *scene = [[MenuScene alloc]
                          initWithSize:self.view.frame.size];
-    SKView *spriteView = (SKView*) self.view;
-    [spriteView presentScene: scene];
+    [skView presentScene: scene];
+  
 }
 
 - (void)didReceiveMemoryWarning

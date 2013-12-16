@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 
-@interface SpriteViewController : UIViewController
+@interface SpriteViewController : UIViewController {
+    
+    IBOutlet SKView *skView;
+}
+
+@property (nonatomic, retain) IBOutlet SKView *skView;
 
 @end
