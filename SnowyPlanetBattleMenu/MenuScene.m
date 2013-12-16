@@ -20,18 +20,19 @@
 }
 - (void)createSceneContents {
     
+    self.backgroundColor = [SKColor colorWithRed:191/255.0 green:223/255.0 blue:235/255.0 alpha:1.0];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
     //add snowFlake!
     SKAction *makeSnowFlakes = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addSnowFlake) onTarget:self],
-                                                [SKAction waitForDuration:0.20 withRange:0.15]
+                                                [SKAction waitForDuration:1.0 withRange:0.15]
                                                 ]];
     [self runAction: [SKAction repeatAction:makeSnowFlakes count:20]];
     
     
     // and buttons!
-   // [self makeButtons];
+    [self makeButtons];
     
     // and a dancing title!
     
@@ -109,31 +110,48 @@
 }
 
 -(void)makeButtons {
+        
+    SKNode *node1 = [SKNode new];
+    node1.position = CGPointMake(self.button1.frame.origin.x + 0.5*self.button1.frame.size.width, self.frame.size.height - self.button1.frame.origin.y - 0.5*self.button1.frame.size.height);
+    node1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button1.frame.size];
+    node1.physicsBody.dynamic = NO;
+    node1.name = @"node";
+    [self addChild:node1];
     
-    for (int i = 0; i < 6; i++){
-        
-        // crazy math!
-        CGFloat button_x = (50 + 50*i)*(-1)*((i/3)-1) + (self.frame.size.width - 350 + 50*(i%3))*(i/3);
-        CGFloat button_y = (300 + 200*i)*(-1)*((i/3)-1) + (700 - 200*(i%3))*(i/3);
-        
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(button_x, button_y, 200, 90)];
-        [button setBackgroundImage:[UIImage imageNamed:@"easy_button.png"] forState:UIControlStateNormal];
-        [button setTitle:[NSString stringWithFormat:@"Option %i", (i+1)] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:28.0]];
-        [button addTarget:self action:@selector(buttonChoice:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-        
-        SKNode *node = [SKNode new];
-        node.position = CGPointMake(button_x + 100, self.frame.size.height - button_y - 45);
-        node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:button.frame.size];
-        node.physicsBody.dynamic = NO;
-        node.name = @"node";
-        [self addChild:node];
-        
-        
-    }
+    SKNode *node2 = [SKNode new];
+    node2.position = CGPointMake(self.button2.frame.origin.x + 0.5*self.button2.frame.size.width, self.frame.size.height - self.button2.frame.origin.y - 0.5*self.button2.frame.size.height);
+    node2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button2.frame.size];
+    node2.physicsBody.dynamic = NO;
+    node2.name = @"node";
+    [self addChild:node2];
     
+    SKNode *node3 = [SKNode new];
+    node3.position = CGPointMake(self.button3.frame.origin.x + 0.5*self.button3.frame.size.width, self.frame.size.height - self.button3.frame.origin.y - 0.5*self.button3.frame.size.height);
+    node3.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button3.frame.size];
+    node3.physicsBody.dynamic = NO;
+    node3.name = @"node";
+    [self addChild:node3];
+    
+    SKNode *node4 = [SKNode new];
+    node4.position = CGPointMake(self.button4.frame.origin.x + 0.5*self.button4.frame.size.width, self.frame.size.height - self.button4.frame.origin.y - 0.5*self.button4.frame.size.height);
+    node4.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button4.frame.size];
+    node4.physicsBody.dynamic = NO;
+    node4.name = @"node";
+    [self addChild:node4];
+    
+    SKNode *node5 = [SKNode new];
+    node5.position = CGPointMake(self.button5.frame.origin.x + 0.5*self.button5.frame.size.width, self.frame.size.height - self.button5.frame.origin.y - 0.5*self.button5.frame.size.height);
+    node5.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button5.frame.size];
+    node5.physicsBody.dynamic = NO;
+    node5.name = @"node";
+    [self addChild:node5];
+    
+    SKNode *node6 = [SKNode new];
+    node6.position = CGPointMake(self.button6.frame.origin.x + 0.5*self.button6.frame.size.width, self.frame.size.height - self.button6.frame.origin.y - 0.5*self.button6.frame.size.height);
+    node6.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.button6.frame.size];
+    node6.physicsBody.dynamic = NO;
+    node6.name = @"node";
+    [self addChild:node6];
 }
 
 - (SKLabelNode *)newDancingTitle {
@@ -143,7 +161,7 @@
     // TODO: make more swoopy
     [dancingTitle setText:@"Welcome!"];
     dancingTitle.fontColor = [SKColor yellowColor];
-    dancingTitle.fontSize = 72.0;
+    dancingTitle.fontSize = 32.0;
     
     float hover_duration = 0.3;
     float movement_duration = 0.1;
