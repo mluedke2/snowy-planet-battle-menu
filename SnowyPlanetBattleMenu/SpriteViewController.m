@@ -9,6 +9,7 @@
 #import "SpriteViewController.h"
 #import <SpriteKit/SpriteKit.h>
 #import "MenuScene.h"
+#import "NextViewController.h"
 
 @interface SpriteViewController ()
 
@@ -17,17 +18,20 @@
 @implementation SpriteViewController
 @synthesize skView, button1, button2, button3, button4, button5, button6;
 
-/*
+//- (void)buttonChoice:(UIButton *)sender {
+//    [menuScene buttonChoice:sender];
+//}
+
 - (void)buttonChoice:(UIButton *)sender {
     
-    SKNode *dancingTitle = [self childNodeWithName:@"dancingTitle"];
+    SKNode *dancingTitle = [menuScene childNodeWithName:@"dancingTitle"];
     
-    CGPoint buttonCenter = CGPointMake(CGRectGetMidX(sender.frame), self.frame.size.height - CGRectGetMidY(sender.frame));
+    CGPoint buttonCenter = CGPointMake(CGRectGetMidX(sender.frame), self.skView.frame.size.height - CGRectGetMidY(sender.frame));
     
     SKAction *shootLightAndDisappear = [SKAction sequence:@[
                                                             [SKAction fadeAlphaTo:1.0 duration:0.2],
                                                             [SKAction scaleBy:4.0 duration:1.0],
-                                                            [SKAction moveTo:[self convertPoint:buttonCenter toNode:dancingTitle] duration:0.5],
+                                                            [SKAction moveTo:[menuScene convertPoint:buttonCenter toNode:dancingTitle] duration:0.5],
                                                             [SKAction removeFromParent]
                                                             ]];
     
@@ -37,17 +41,17 @@
     // stop all animations; we need all the frame rate we can get for this!!
     [light1 removeAllActions];
     [light2 removeAllActions];
-    [self removeAllActions];
+    [menuScene removeAllActions];
     [dancingTitle removeAllActions];
     
     [light1 runAction:shootLightAndDisappear];
     [light2 runAction:shootLightAndDisappear completion:^{
         
         // insert 'splosion!
-        [sender removeFromSuperview];
-        SKEmitterNode *splosion = [self newSplosion];
+        sender.hidden = YES;
+        SKEmitterNode *splosion = [menuScene newSplosion];
         splosion.particlePosition = buttonCenter;
-        [self addChild:splosion];
+        [menuScene addChild:splosion];
         
         float duration = 2.0;
         
@@ -62,25 +66,28 @@
          
                  completion:^{
                      
-                     // and... scene!
-                     [[self.view subviews]
-                      makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                     NextViewController *nextViewController = [[NextViewController alloc] initWithNibName:@"NextViewController" bundle:nil];
                      
-                     SKScene* mainScene = [[SpriteEndScene alloc]
-                                           initWithSize:self.size];
-                     SKTransition *doors = [SKTransition
-                                            doorsCloseHorizontalWithDuration:0.5];
-                     [self.view presentScene:mainScene transition:doors];
+                     [self presentViewController:nextViewController animated:YES completion:nil];
+                     
+                     //                     // and... scene!
+                     //                     [[self.view subviews]
+                     //                      makeObjectsPerformSelector:@selector(removeFromSuperview)];
+                     //
+                     //                     SKScene* endScene = [[SpriteEndScene alloc]
+                     //                                           initWithSize:self.size];
+                     //                     SKTransition *doors = [SKTransition
+                     //                                            doorsCloseHorizontalWithDuration:0.5];
+                     //                     [self.view presentScene:endScene transition:doors];
                      
                  }];
         
     }];
     
 }
- */
 
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -90,20 +97,34 @@
     
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
+- (void) viewWillDisappear:(BOOL)animated {
     
-    MenuScene *scene = [[MenuScene alloc]
+    [super viewWillDisappear:animated];
+    
+    skView.paused = YES;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    
+    menuScene = [[MenuScene alloc]
                          initWithSize:self.view.frame.size];
-    scene.button1 = button1;
-    scene.button2 = button2;
-    scene.button3 = button3;
-    scene.button4 = button4;
-    scene.button5 = button5;
-    scene.button6 = button6;
+    menuScene.button1 = button1;
+    menuScene.button2 = button2;
+    menuScene.button3 = button3;
+    menuScene.button4 = button4;
+    menuScene.button5 = button5;
+    menuScene.button6 = button6;
     
-    [skView presentScene: scene];
-  
+    button1.hidden = NO;
+    button2.hidden = NO;
+    button3.hidden = NO;
+    button4.hidden = NO;
+    button5.hidden = NO;
+    button6.hidden = NO;
+    
+    [skView presentScene: menuScene];
+    
+    skView.paused = NO;
 }
 
 - (void)didReceiveMemoryWarning

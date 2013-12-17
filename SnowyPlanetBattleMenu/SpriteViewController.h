@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "MenuScene.h"
 
 @interface SpriteViewController : UIViewController {
     
+    MenuScene *menuScene;
     IBOutlet SKView *skView;
 }
 
@@ -22,5 +24,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *button4;
 @property (nonatomic, retain) IBOutlet UIButton *button5;
 @property (nonatomic, retain) IBOutlet UIButton *button6;
+
+-(IBAction)buttonChoice:(UIButton *)sender;
 
 @end

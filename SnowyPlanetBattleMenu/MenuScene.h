@@ -19,4 +19,7 @@
 
 @property BOOL contentCreated;
 
+- (SKEmitterNode*) newSplosion;
+-(IBAction)buttonChoice:(UIButton *)sender;
+
 @end

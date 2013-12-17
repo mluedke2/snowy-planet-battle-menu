@@ -7,7 +7,7 @@
 //
 
 #import "MenuScene.h"
-#import "SpriteEndScene.h"
+#import "NextViewController.h"
 
 @implementation MenuScene
 
@@ -18,6 +18,7 @@
         self.contentCreated = YES;
     }
 }
+
 - (void)createSceneContents {
     
     self.backgroundColor = [SKColor colorWithRed:191/255.0 green:223/255.0 blue:235/255.0 alpha:1.0];
@@ -35,14 +36,12 @@
     [self makeButtons];
     
     // and a dancing title!
-    
     SKLabelNode *dancingTitle = [self newDancingTitle];
     dancingTitle.position = CGPointMake(CGRectGetMidX(self.frame)-45, self.frame.size.height - 150);
     [self addChild:dancingTitle];
     
     
     // add snow!
-    
     SKEmitterNode *snow = [self newSnowEmitter];
     snow.particlePosition = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height);
     snow.particlePositionRange = CGVectorMake(self.frame.size.width, 0.0);
@@ -92,16 +91,18 @@
                                                  ]]
          
                  completion:^{
-                 
-                     // and... scene!
-                     [[self.view subviews]
-                      makeObjectsPerformSelector:@selector(removeFromSuperview)];
                      
-                     SKScene* mainScene = [[SpriteEndScene alloc]
-                                           initWithSize:self.size];
-                     SKTransition *doors = [SKTransition
-                                            doorsCloseHorizontalWithDuration:0.5];
-                     [self.view presentScene:mainScene transition:doors];
+                     
+                 
+//                     // and... scene!
+//                     [[self.view subviews]
+//                      makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//                     
+//                     SKScene* endScene = [[SpriteEndScene alloc]
+//                                           initWithSize:self.size];
+//                     SKTransition *doors = [SKTransition
+//                                            doorsCloseHorizontalWithDuration:0.5];
+//                     [self.view presentScene:endScene transition:doors];
                  
                  }];
     
@@ -110,6 +111,10 @@
 }
 
 -(void)makeButtons {
+    
+    if (self.button1 == nil) {
+        return;
+    }
         
     SKNode *node1 = [SKNode new];
     node1.position = CGPointMake(self.button1.frame.origin.x + 0.5*self.button1.frame.size.width, self.frame.size.height - self.button1.frame.origin.y - 0.5*self.button1.frame.size.height);
@@ -216,8 +221,7 @@
     return dancingTitle;
 }
 
-- (SKSpriteNode *)newLightForward:(BOOL)forward
-{
+- (SKSpriteNode *)newLightForward:(BOOL)forward {
     SKSpriteNode *light = [[SKSpriteNode alloc] initWithColor:[SKColor
                                                                redColor] size:CGSizeMake(6,6)];
     
@@ -254,7 +258,6 @@
     
     return light;
 }
-
 
 static inline CGFloat skRandf() {
     return rand() / (CGFloat) RAND_MAX;
@@ -293,7 +296,6 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
                                        thrust*sinf(shipDirection));
     SKSpriteNode *snowFlake = (SKSpriteNode *)fallingTimer.userInfo;
     [snowFlake.physicsBody applyForce:thrustVector];
-    
 }
 
 - (void)meltSnowFlake:(SKNode *)snowFlake {
@@ -303,8 +305,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addSnowFlake];
 }
 
--(void)didSimulatePhysics
-{
+-(void)didSimulatePhysics {
     // for frame rate reasons, once a snowFlake falls below 0 it is removed (otherwise it actually still exists, just off the screen!)
     
     [self enumerateChildNodesWithName:@"snowFlake" usingBlock:^(SKNode *node,
@@ -317,16 +318,14 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
 
 // trying to make background snow
 
-- (SKEmitterNode*) newSnowEmitter
-{
+- (SKEmitterNode*) newSnowEmitter {
     NSString *snowPath = [[NSBundle mainBundle] pathForResource:@"Snow"
                                                            ofType:@"sks"];
     SKEmitterNode *snow = [NSKeyedUnarchiver unarchiveObjectWithFile:snowPath];
     return snow;
 }
 
-- (SKEmitterNode*) newSplosion
-{
+- (SKEmitterNode*) newSplosion {
     NSString *splosionPath = [[NSBundle mainBundle] pathForResource:@"Splosions"
                                                          ofType:@"sks"];
     SKEmitterNode *splosion = [NSKeyedUnarchiver unarchiveObjectWithFile:splosionPath];
