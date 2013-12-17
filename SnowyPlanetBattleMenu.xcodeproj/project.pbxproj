@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0DC64E1860134600E54296 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0DC64C1860134600E54296 /* NextViewController.m */; };
-		FA0DC64F1860134600E54296 /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DC64D1860134600E54296 /* NextViewController.xib */; };
-		FA2CF3A3185ED6020020FC94 /* SpriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */; };
-		FA2CF3A4185ED8650020FC94 /* SpriteViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */; };
+		FA0DC65418601BC300E54296 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0DC65118601BC300E54296 /* NextViewController.m */; };
+		FA0DC65518601BC300E54296 /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DC65218601BC300E54296 /* NextViewController.xib */; };
+		FA0DC65618601BC300E54296 /* SpriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DC65318601BC300E54296 /* SpriteViewController.xib */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
@@ -42,10 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA0DC64B1860134600E54296 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = SOURCE_ROOT; };
-		FA0DC64C1860134600E54296 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = SOURCE_ROOT; };
-		FA0DC64D1860134600E54296 /* NextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextViewController.xib; sourceTree = SOURCE_ROOT; };
-		FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpriteViewController.xib; sourceTree = SOURCE_ROOT; };
+		FA0DC65018601BC300E54296 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextViewController.h; path = SnowyPlanetBattleMenu/NextViewController.h; sourceTree = SOURCE_ROOT; };
+		FA0DC65118601BC300E54296 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextViewController.m; path = SnowyPlanetBattleMenu/NextViewController.m; sourceTree = SOURCE_ROOT; };
+		FA0DC65218601BC300E54296 /* NextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NextViewController.xib; path = SnowyPlanetBattleMenu/NextViewController.xib; sourceTree = SOURCE_ROOT; };
+		FA0DC65318601BC300E54296 /* SpriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpriteViewController.xib; path = SnowyPlanetBattleMenu/SpriteViewController.xib; sourceTree = SOURCE_ROOT; };
 		FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowyPlanetBattleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,16 +137,16 @@
 		FA5B5943178C7EC100336A0E /* SnowyPlanetBattleMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FAED64E8178E0B3500B01F54 /* MenuScene.h */,
-				FAED64E9178E0B3500B01F54 /* MenuScene.m */,
 				FAED64EA178E0B3500B01F54 /* SpriteAppDelegate.h */,
 				FAED64EB178E0B3500B01F54 /* SpriteAppDelegate.m */,
 				FAED64EE178E0B3500B01F54 /* SpriteViewController.h */,
 				FAED64EF178E0B3500B01F54 /* SpriteViewController.m */,
-				FA2CF3A2185ED6020020FC94 /* SpriteViewController.xib */,
-				FA0DC64B1860134600E54296 /* NextViewController.h */,
-				FA0DC64C1860134600E54296 /* NextViewController.m */,
-				FA0DC64D1860134600E54296 /* NextViewController.xib */,
+				FA0DC65318601BC300E54296 /* SpriteViewController.xib */,
+				FAED64E8178E0B3500B01F54 /* MenuScene.h */,
+				FAED64E9178E0B3500B01F54 /* MenuScene.m */,
+				FA0DC65018601BC300E54296 /* NextViewController.h */,
+				FA0DC65118601BC300E54296 /* NextViewController.m */,
+				FA0DC65218601BC300E54296 /* NextViewController.xib */,
 				FA380A24178DCAFE005A5DAE /* Particles */,
 				FA5B597A178C900400336A0E /* Images */,
 				FA5B5944178C7EC100336A0E /* Supporting Files */,
@@ -258,10 +257,10 @@
 				FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */,
 				FAED64E6178E0AF300B01F54 /* spark.png in Resources */,
 				FAED64DE178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist in Resources */,
+				FA0DC65518601BC300E54296 /* NextViewController.xib in Resources */,
 				FAED64E7178E0AF300B01F54 /* Splosions.sks in Resources */,
-				FA0DC64F1860134600E54296 /* NextViewController.xib in Resources */,
-				FA2CF3A3185ED6020020FC94 /* SpriteViewController.xib in Resources */,
 				FAED64D9178E0AB700B01F54 /* easy_button.png in Resources */,
+				FA0DC65618601BC300E54296 /* SpriteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2CF3A4185ED8650020FC94 /* SpriteViewController.xib in Sources */,
+				FA0DC65418601BC300E54296 /* NextViewController.m in Sources */,
 				FAED64F3178E0B3500B01F54 /* SpriteViewController.m in Sources */,
 				FAED64DD178E0AD600B01F54 /* main.m in Sources */,
 				FAED64F1178E0B3500B01F54 /* SpriteAppDelegate.m in Sources */,
-				FA0DC64E1860134600E54296 /* NextViewController.m in Sources */,
 				FAED64F0178E0B3500B01F54 /* MenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
