@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA5B5939178C7EC100336A0E"
-            BuildableName = "SpriteWalkthrough.app"
+            BuildableName = "SnowyPlanetBattleMenu.app"
             BlueprintName = "SpriteWalkthrough"
-            ReferencedContainer = "container:SpriteWalkthrough.xcodeproj">
+            ReferencedContainer = "container:SnowyPlanetBattleMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -11,6 +11,9 @@
 
 @implementation MenuScene
 
+#define MELT_DELAY 5.0
+#define CREATION_DELAY 1.0
+
 - (void)didMoveToView:(SKView *)view {
     if (!self.contentCreated)
     {
@@ -27,9 +30,9 @@
     //add snowFlake!
     SKAction *makeSnowFlakes = [SKAction sequence: @[
                                                 [SKAction performSelector:@selector(addSnowFlake) onTarget:self],
-                                                [SKAction waitForDuration:1.0 withRange:0.15]
+                                                [SKAction waitForDuration:CREATION_DELAY withRange:0.15]
                                                 ]];
-    [self runAction: [SKAction repeatAction:makeSnowFlakes count:20]];
+    [self runAction: [SKAction repeatActionForever:makeSnowFlakes]];
     
     
     // and buttons!
@@ -165,7 +168,7 @@
     
     // TODO: make more swoopy
     [dancingTitle setText:@"Welcome!"];
-    dancingTitle.fontColor = [SKColor yellowColor];
+    dancingTitle.fontColor = [SKColor orangeColor];
     dancingTitle.fontSize = 32.0;
     
     float hover_duration = 0.3;
@@ -284,7 +287,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     [self addChild:snowFlake];
     
     // this is important for frame rate!
-    [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:5.0];
+    [self performSelector:@selector(meltSnowFlake:) withObject:snowFlake afterDelay:MELT_DELAY];
     
 }
 
