@@ -10,6 +10,7 @@
 		FA0DC65418601BC300E54296 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0DC65118601BC300E54296 /* NextViewController.m */; };
 		FA0DC65518601BC300E54296 /* NextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DC65218601BC300E54296 /* NextViewController.xib */; };
 		FA0DC65618601BC300E54296 /* SpriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0DC65318601BC300E54296 /* SpriteViewController.xib */; };
+		FA52489A18EA94310031D6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA52489918EA94310031D6EB /* Main.storyboard */; };
 		FA5B593E178C7EC100336A0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593D178C7EC100336A0E /* Foundation.framework */; };
 		FA5B5940178C7EC100336A0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B593F178C7EC100336A0E /* CoreGraphics.framework */; };
 		FA5B5942178C7EC100336A0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5B5941178C7EC100336A0E /* UIKit.framework */; };
@@ -45,6 +46,7 @@
 		FA0DC65118601BC300E54296 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextViewController.m; path = SnowyPlanetBattleMenu/NextViewController.m; sourceTree = SOURCE_ROOT; };
 		FA0DC65218601BC300E54296 /* NextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NextViewController.xib; path = SnowyPlanetBattleMenu/NextViewController.xib; sourceTree = SOURCE_ROOT; };
 		FA0DC65318601BC300E54296 /* SpriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpriteViewController.xib; path = SnowyPlanetBattleMenu/SpriteViewController.xib; sourceTree = SOURCE_ROOT; };
+		FA52489918EA94310031D6EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = SnowyPlanetBattleMenu/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		FA5B593A178C7EC100336A0E /* SnowyPlanetBattleMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnowyPlanetBattleMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5B593D178C7EC100336A0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA5B593F178C7EC100336A0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +164,7 @@
 				FAED64DA178E0AD600B01F54 /* main.m */,
 				FAED64DB178E0AD600B01F54 /* SnowyPlanetBattleMenu-Info.plist */,
 				FAED64DC178E0AD600B01F54 /* SnowyPlanetBattleMenu-Prefix.pch */,
+				FA52489918EA94310031D6EB /* Main.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAED64E5178E0AF300B01F54 /* Snow.sks in Resources */,
+				FA52489A18EA94310031D6EB /* Main.storyboard in Resources */,
 				FAED64E1178E0ADE00B01F54 /* InfoPlist.strings in Resources */,
 				FAED64F5178E0B4000B01F54 /* Images.xcassets in Resources */,
 				FAED64E6178E0AF300B01F54 /* spark.png in Resources */,
